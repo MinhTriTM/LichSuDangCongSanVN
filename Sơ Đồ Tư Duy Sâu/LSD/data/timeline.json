@@ -1,0 +1,501 @@
+{
+  "name": "TIẾN TRÌNH LỊCH SỬ ĐẢNG (1858 - NAY)",
+  "details": "Sơ đồ thời gian cực sâu 8 tầng, chứa 100% dữ liệu giáo trình và tài liệu phản hồi.",
+  "children": [
+    {
+      "name": "Thế kỷ XIX (1858 - 1899)",
+      "children": [
+        {
+          "name": "Giai đoạn Pháp xâm lược (1858-1884)",
+          "children": [
+            {
+              "name": "Thập kỷ 1850",
+              "children": [
+                {
+                  "name": "Năm 1858",
+                  "children": [
+                    {
+                      "name": "Tháng 9",
+                      "children": [
+                        {
+                          "name": "Sự kiện quân sự",
+                          "children": [
+                            {
+                              "name": "Pháp nổ súng tại Đà Nẵng (1/9/1858)",
+                              "details": "Liên quân Pháp - Tây Ban Nha nổ súng tấn công bán đảo Sơn Trà. Nguyễn Tri Phương dựng phòng tuyến Liên Trì chặn giặc. Kế hoạch 'đánh nhanh thắng nhanh' của Pháp phá sản."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Năm 1859",
+                  "children": [
+                    {
+                      "name": "Tháng 2",
+                      "children": [
+                        {
+                          "name": "Sự kiện quân sự",
+                          "children": [
+                            {
+                              "name": "Pháp chiếm Gia Định (17/2/1859)",
+                              "details": "Pháp chuyển hướng vào Nam Bộ, đánh chiếm thành Gia Định. Triều Nguyễn lúng túng, để mất cơ hội phản công. Khởi nghĩa Nguyễn Trung Trực đốt tàu Hy Vọng."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Thập kỷ 1860-1880",
+              "children": [
+                {
+                  "name": "Các Hiệp ước đầu hàng",
+                  "children": [
+                    {
+                      "name": "Hiệp ước Nhâm Tuất (1862)",
+                      "children": [
+                        {
+                          "name": "Mất 3 tỉnh miền Đông",
+                          "children": [
+                            {
+                              "name": "Hệ quả & Bài học",
+                              "details": "Triều đình cắt Gia Định, Định Tường, Biên Hòa. Bồi thường chiến phí. Thể hiện sự nhu nhược của giai cấp phong kiến trước họa ngoại xâm."
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Hiệp ước Quý Mùi (1883) & Giáp Thân (1884)",
+                      "children": [
+                        {
+                          "name": "Mất quyền độc lập",
+                          "children": [
+                            {
+                              "name": "Việt Nam thành thuộc địa",
+                              "details": "Thừa nhận nền bảo hộ của Pháp ở Bắc Kỳ và Trung Kỳ. Đánh dấu sự sụp đổ hoàn toàn của nhà nước phong kiến độc lập."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thế kỷ XX (1900 - 1999)",
+      "children": [
+        {
+          "name": "Giai đoạn 1900 - 1930 (Trước khi có Đảng)",
+          "children": [
+            {
+              "name": "Phong trào Yêu nước (Đầu thế kỷ)",
+              "children": [
+                {
+                  "name": "Khuynh hướng Bạo động",
+                  "children": [
+                    {
+                      "name": "Phong trào Đông Du (1906-1908)",
+                      "children": [
+                        {
+                          "name": "Phan Bội Châu",
+                          "children": [
+                            {
+                              "name": "Bài học thất bại",
+                              "details": "Cử thanh niên sang Nhật học quân sự. Nhưng Pháp-Nhật cấu kết trục xuất. Thất bại do ảo tưởng vào đế quốc Nhật Bản."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Khuynh hướng Cải cách",
+                  "children": [
+                    {
+                      "name": "Phong trào Duy Tân",
+                      "children": [
+                        {
+                          "name": "Phan Châu Trinh",
+                          "children": [
+                            {
+                              "name": "Bài học thất bại",
+                              "details": "Khẩu hiệu 'Khai dân trí, chấn dân khí, hậu dân sinh'. Ảo tưởng dựa vào Pháp để cải cách ('xin giặc rủ lòng thương')."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Thành lập Đảng (1930)",
+              "children": [
+                {
+                  "name": "Năm 1930",
+                  "children": [
+                    {
+                      "name": "Tháng 2",
+                      "children": [
+                        {
+                          "name": "Hội nghị Thành lập Đảng (6/1 - 7/2/1930)",
+                          "children": [
+                            {
+                              "name": "Cương lĩnh chính trị đầu tiên",
+                              "details": "Hợp nhất 3 tổ chức CS. Bác Hồ soạn thảo Chánh cương, Sách lược vắn tắt. Xác định CM Tư sản dân quyền và Thổ địa CM. Đặt GPDT lên hàng đầu. Lực lượng toàn dân. Giải quyết triệt để khủng hoảng đường lối."
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Tháng 10",
+                      "children": [
+                        {
+                          "name": "HNTW 1 (Hương Cảng)",
+                          "children": [
+                            {
+                              "name": "Luận cương Chính trị 10/1930",
+                              "details": "Trần Phú làm Tổng Bí thư. Đổi tên thành ĐCS Đông Dương. Hạn chế (Tả khuynh): Bỏ qua thời kỳ tư bổn, không nhấn mạnh GPDT, chỉ tập trung đấu tranh giai cấp (ruộng đất), bỏ rơi tiểu tư sản, tư sản dân tộc."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Giai đoạn 1931 - 1945 (Tiến tới CMT8)",
+          "children": [
+            {
+              "name": "Năm 1941",
+              "children": [
+                {
+                  "name": "Tháng 5",
+                  "children": [
+                    {
+                      "name": "Hội nghị TW 8 (Pác Bó)",
+                      "children": [
+                        {
+                          "name": "Chuyển hướng chiến lược",
+                          "children": [
+                            {
+                              "name": "Hoàn chỉnh đường lối GPDT",
+                              "details": "Do Bác Hồ chủ trì. Khẳng định GPDT là nhiệm vụ bức thiết nhất, cao hơn đấu tranh giai cấp. Thành lập Mặt trận Việt Minh. Xây dựng lực lượng vũ trang."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Năm 1945",
+              "children": [
+                {
+                  "name": "Tháng 8",
+                  "children": [
+                    {
+                      "name": "Tổng Khởi Nghĩa (14-30/8)",
+                      "children": [
+                        {
+                          "name": "Thắng lợi Cách mạng Tháng 8",
+                          "children": [
+                            {
+                              "name": "Ý nghĩa & Bài học",
+                              "details": "Thời cơ vàng (Nhật hàng Đồng minh). Giành chính quyền trong 15 ngày. Bài học: Nắm vững thời cơ, chớp thời cơ; Toàn dân nổi dậy trên nền tảng liên minh công-nông; Giương cao ngọn cờ ĐLDT."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Giai đoạn 1945 - 1954 (Chống Pháp)",
+          "children": [
+            {
+              "name": "Năm 1946",
+              "children": [
+                {
+                  "name": "Tháng 3",
+                  "children": [
+                    {
+                      "name": "Sách lược 'Hòa để tiến'",
+                      "children": [
+                        {
+                          "name": "Hiệp định Sơ bộ (6/3/1946)",
+                          "children": [
+                            {
+                              "name": "Loại 20 vạn quân Tưởng",
+                              "details": "Cho 1.5 vạn Pháp ra Bắc để đẩy Tưởng về nước, tránh đối phó nhiều kẻ thù. Pháp công nhận VN là Quốc gia tự do."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Tháng 12",
+                  "children": [
+                    {
+                      "name": "Bùng nổ chiến tranh (19/12/1946)",
+                      "children": [
+                        {
+                          "name": "Đường lối Kháng chiến",
+                          "children": [
+                            {
+                              "name": "Toàn dân, toàn diện, lâu dài",
+                              "details": "Bác ra Lời kêu gọi Toàn quốc kháng chiến. Phương châm: Dựa vào sức mình là chính, toàn dân, toàn diện, lâu dài."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Năm 1954",
+              "children": [
+                {
+                  "name": "Tháng 5",
+                  "children": [
+                    {
+                      "name": "Chiến dịch Điện Biên Phủ",
+                      "children": [
+                        {
+                          "name": "Phá sản Kế hoạch Nava",
+                          "children": [
+                            {
+                              "name": "Kết thúc chiến tranh",
+                              "details": "Đánh chắc tiến chắc. Bắt sống De Castries (7/5/1954). Buộc Pháp ký Hiệp định Geneva (21/7/1954), lập lại hòa bình ở Đông Dương."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Giai đoạn 1954 - 1975 (Chống Mỹ)",
+          "children": [
+            {
+              "name": "Thập kỷ 1960",
+              "children": [
+                {
+                  "name": "Đại hội III (9/1960)",
+                  "children": [
+                    {
+                      "name": "Đường lối 2 miền",
+                      "children": [
+                        {
+                          "name": "Miền Bắc (Quyết định nhất) - Miền Nam (Trực tiếp)",
+                          "children": [
+                            {
+                              "name": "Đánh bại các chiến lược Mỹ",
+                              "details": "Chiến tranh Đặc biệt (phá ấp chiến lược), Chiến tranh Cục bộ (Tổng tiến công Mậu Thân 1968), VN hóa chiến tranh."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Năm 1975",
+              "children": [
+                {
+                  "name": "Đại thắng Mùa Xuân",
+                  "children": [
+                    {
+                      "name": "Chiến dịch Hồ Chí Minh",
+                      "children": [
+                        {
+                          "name": "Giải phóng miền Nam",
+                          "children": [
+                            {
+                              "name": "30/4/1975",
+                              "details": "Đỉnh cao chiến dịch Tây Nguyên, Huế-Đà Nẵng. Hoàn thành CM DTDCND, non sông thu về một mối. Bài học: Giương cao ngọn cờ ĐLDT và CNXH."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Giai đoạn 1975 - 1999 (Đổi mới)",
+          "children": [
+            {
+              "name": "Thập kỷ 1980",
+              "children": [
+                {
+                  "name": "Đại hội VI (12/1986)",
+                  "children": [
+                    {
+                      "name": "Đổi Mới Toàn Diện",
+                      "children": [
+                        {
+                          "name": "Xóa bỏ Bao cấp",
+                          "children": [
+                            {
+                              "name": "Kinh tế hàng hóa nhiều thành phần",
+                              "details": "TBT Nguyễn Văn Linh. 'Nhìn thẳng vào sự thật'. Xóa bỏ cơ chế tập trung quan liêu bao cấp. Tập trung 3 chương trình: Lương thực, hàng tiêu dùng, xuất khẩu."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Thập kỷ 1990",
+              "children": [
+                {
+                  "name": "Đại hội VII (1991)",
+                  "children": [
+                    {
+                      "name": "Cương lĩnh 1991",
+                      "children": [
+                        {
+                          "name": "Kiên định CNXH",
+                          "children": [
+                            {
+                              "name": "Vượt qua khủng hoảng",
+                              "details": "Liên Xô sụp đổ. Đảng khẳng định CN Mác-Lênin và tư tưởng HCM làm nền tảng. Đa phương hóa ngoại giao. Ra khỏi khủng hoảng (ĐH 8 - 1996)."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thế kỷ XXI (2000 - Nay)",
+      "children": [
+        {
+          "name": "Hội nhập và Bứt phá",
+          "children": [
+            {
+              "name": "Đại hội IX (2001)",
+              "children": [
+                {
+                  "name": "Khái niệm mới",
+                  "children": [
+                    {
+                      "name": "Kinh tế thị trường định hướng XHCN",
+                      "children": [
+                        {
+                          "name": "Hội nhập quốc tế",
+                          "children": [
+                            {
+                              "name": "WTO (2006)",
+                              "details": "ĐH X (2006) cho Đảng viên làm kinh tế tư nhân. VN gia nhập WTO, tổ chức APEC."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Đại hội XII (2016)",
+              "children": [
+                {
+                  "name": "Chỉnh đốn Đảng",
+                  "children": [
+                    {
+                      "name": "Phòng chống tham nhũng",
+                      "children": [
+                        {
+                          "name": "Đốt lò",
+                          "children": [
+                            {
+                              "name": "Không có vùng cấm",
+                              "details": "TBT Nguyễn Phú Trọng khởi xướng. Kỷ luật nghiêm minh. HNTW 5 công nhận KT Tư nhân là động lực quan trọng."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Đại hội XIII (2021) & Tầm nhìn XIV",
+              "children": [
+                {
+                  "name": "Khát vọng hùng cường",
+                  "children": [
+                    {
+                      "name": "Mốc 2045",
+                      "children": [
+                        {
+                          "name": "Nước phát triển, thu nhập cao",
+                          "children": [
+                            {
+                              "name": "Kỷ nguyên vươn mình",
+                              "details": "Thực hiện 3 đột phá chiến lược (Thể chế, Hạ tầng, Nhân lực). ĐH 14 (2026) hướng tới Cách mạng Tinh - Gọn - Mạnh bộ máy tổ chức."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

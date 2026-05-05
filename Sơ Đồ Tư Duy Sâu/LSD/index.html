@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sơ Đồ Tư Duy: Lịch Sử Đảng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="#fbc02d">
+            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
+          </svg>
+          <div class="titles">
+            <h1>SƠ ĐỒ TƯ DUY - LỊCH SỬ ĐẢNG</h1>
+            <span class="subtitle">Bách khoa toàn thư hệ Chuyên - Học viện Chính trị Quốc gia</span>
+          </div>
+        </div>
+        <div class="controls-wrapper">
+          <div class="dataset-selectors">
+            <button class="dataset-btn active" data-file="data/timeline.json">⏳ Tiến Trình (1858-Nay)</button>
+            <button class="dataset-btn" data-file="data/hochiminh.json">🌟 Hành Trình Bác Hồ</button>
+            <button class="dataset-btn" data-file="data/tracnghiem.json">📝 Trắc Nghiệm (1131 Câu)</button>
+            <button class="dataset-btn" data-file="data/quocte.json">🌍 Bối Cảnh Quốc Tế</button>
+          </div>
+          <div class="controls">
+            <button id="btn-collapse-all" title="Thu gọn toàn bộ sơ đồ"><span class="icon">▼</span> Thu Gọn</button>
+            <button id="btn-expand-all" title="Mở rộng toàn bộ sơ đồ (Cảnh báo: Sẽ rất lớn)"><span class="icon">▲</span> Mở Rộng</button>
+            <button class="icon-btn" id="btn-zoom-in" title="Phóng to">➕</button>
+            <button class="icon-btn" id="btn-zoom-out" title="Thu nhỏ">➖</button>
+            <button class="icon-btn" id="btn-center" title="Trở về trung tâm">🎯</button>
+          </div>
+        </div>
+      </header>
+
+      <main id="mindmap-container">
+        <!-- SVG D3.js render vào đây -->
+      </main>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

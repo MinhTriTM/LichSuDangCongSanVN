@@ -1,0 +1,26 @@
+{
+  "name": "BỐI CẢNH QUỐC TẾ & NGOẠI GIAO",
+  "details": "Sự tác động của thế giới đến đường lối cách mạng Việt Nam.",
+  "children": [
+    {
+      "name": "Chiến tranh Thế giới II (1939-1945)",
+      "children": [
+        {"name": "Nhật hàng Đồng minh", "details": "Tạo Thời cơ vàng (15/8-2/9) để Tổng khởi nghĩa Tháng 8 thành công."}
+      ]
+    },
+    {
+      "name": "Chiến tranh Lạnh (1945-1991)",
+      "children": [
+        {"name": "Cục diện 2 phe", "details": "Liên Xô viện trợ (từ 1950). Đảng khôn khéo giữ đường lối độc lập, tự chủ giữa mâu thuẫn Xô-Trung."},
+        {"name": "Sự sụp đổ của Liên Xô", "details": "Thập niên 90, VN mất nguồn viện trợ, buộc phải Đổi Mới toàn diện."}
+      ]
+    },
+    {
+      "name": "Hội nhập Toàn cầu hóa (1991-Nay)",
+      "children": [
+        {"name": "Đa phương hóa, đa dạng hóa", "details": "Muốn là bạn, đối tác tin cậy. 1991 bình thường hóa với TQ. 1995 bình thường hóa với Mỹ, gia nhập ASEAN. 2007 WTO."},
+        {"name": "Ngoại giao Cây tre", "details": "Gốc vững, thân chắc, cành uyển chuyển. Nâng cấp Đối tác chiến lược toàn diện với Mỹ, Trung, Nga, Nhật, Hàn, Úc, Ấn."}
+      ]
+    }
+  ]
+}

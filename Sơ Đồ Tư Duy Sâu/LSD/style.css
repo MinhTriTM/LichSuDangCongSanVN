@@ -1,0 +1,115 @@
+:root {
+  --primary: #c62828;
+  --primary-light: #ef5350;
+  --primary-dark: #8e0000;
+  --secondary: #fbc02d;
+  --secondary-hover: #fff176;
+  --bg-color: #f8f9fa;
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --border-color: #e5e7eb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: #fff;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.logo { display: flex; align-items: center; gap: 15px; }
+.logo svg { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+.titles h1 {
+  font-family: 'Merriweather', serif; font-size: 1.25rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 2px 0; color: var(--secondary);
+}
+.subtitle { font-size: 0.75rem; color: rgba(255, 255, 255, 0.85); font-weight: 400; }
+
+.controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.dataset-selectors { display: flex; gap: 8px; }
+.dataset-btn {
+  background-color: rgba(0,0,0,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.3);
+  padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; cursor: pointer; transition: 0.2s;
+}
+.dataset-btn:hover { background-color: rgba(255,255,255,0.2); }
+.dataset-btn.active { background-color: var(--secondary); color: var(--primary-dark); font-weight: bold; border-color: var(--secondary); }
+
+.controls { display: flex; gap: 10px; }
+.controls button {
+  background-color: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 16px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px);
+}
+.controls button:hover { background-color: var(--secondary); color: var(--primary-dark); border-color: var(--secondary); transform: translateY(-2px); }
+.controls .icon-btn { padding: 8px 12px; font-size: 1rem; }
+
+#mindmap-container {
+  flex: 1; width: 100%; position: relative; background-color: #f4f6f9;
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+#mindmap-container svg { width: 100%; height: 100%; cursor: grab; }
+#mindmap-container svg:active { cursor: grabbing; }
+
+.node { cursor: pointer; }
+.node circle { fill: #fff; stroke: var(--primary); stroke-width: 2.5px; transition: all 0.3s ease; }
+.node:hover circle { stroke: var(--secondary); stroke-width: 3.5px; fill: #fffbf0; }
+.node text { font-family: 'Inter', sans-serif; font-size: 14px; fill: var(--text-main); font-weight: 600; text-shadow: 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #fff, -1px 0 3px #fff; }
+
+/* Box hiển thị nội dung chi tiết ở Node cuối */
+.node-box {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  pointer-events: auto; /* Cho phép click và scroll bên trong box */
+}
+.node-box h4 {
+  color: var(--primary-dark);
+  font-family: 'Merriweather', serif;
+  font-size: 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+}
+.node-box p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.node-box::-webkit-scrollbar { width: 4px; }
+.node-box::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+.link { fill: none; stroke: #cbd5e1; stroke-width: 2px; transition: stroke-width 0.3s ease; }

@@ -1,0 +1,6 @@
+có domain minhtritm.id.vn
+2 máy:
+máy 1 24/7 kết nối máy rauter có mở port. chư kết nối cloudflare gì cả.
+
+máy 2 đang code, ở mạng khác, ko mở port được có thể dùng máy 1 qua remotedesktop. 
+

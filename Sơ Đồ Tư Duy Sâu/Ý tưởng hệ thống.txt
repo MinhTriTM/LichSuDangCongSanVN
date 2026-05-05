@@ -1,0 +1,176 @@
+dùng HTML, css, scss..., và file .json làm DB chứ dữ liệu để hiển thị lên làm sơ đồ tư duy để học môn lịch sử đảng đạt điểm tuyệt đối hệ Chuyên thuộc Học Viện chính trị.
+ỏ nhà có máy tính để trống, có kết nối mạng qua cáp, có thể mở port, đang có domain, thực hiện làm sao trỏ dự án chạy:
+
+      16 mindmap-app/
+
+      17 ├── index.html        # Trang chính chứa SVG container của D3.js
+
+      18 ├── package.json      # Cấu hình Vite, SCSS, D3.js dependencies
+
+      19 ├── public/
+
+      20 │   └── data/
+
+      21 │       └── mindmap.json # File JSON đóng vai trò Database
+
+      22 ├── src/
+
+      23 │   ├── style.scss    # Các style SCSS cho node, link, tooltip, bố cục
+
+      24 │   └── main.js       # Script khởi tạo D3.js, load JSON và xử lý tương
+
+         tác
+
+      25 └── vite.config.js    # Cấu hình Vite (nếu cần)
+
+
+
+lên domain minhtritm.id.vn\LSD
+
+
+
+muốn lsd là dự án.
+
+Chào bạn, đây là một dự án frontend sử dụng Vite. Để host dự án này từ máy tính cá nhân ở nhà lên domain minhtritm.id.vn với đường dẫn /LSD (tức là minhtritm.id.vn/LSD), bạn cần thực hiện theo quy trình 4 bước sau:
+
+Bước 1: Cấu hình lại Vite để chạy trên Subpath (đường dẫn phụ)
+Mặc định, khi build Vite, các file sẽ được liên kết với đường dẫn gốc (/). Vì bạn muốn chạy ở /LSD, bạn phải báo cho Vite biết để nó sửa lại đường dẫn các file JS, CSS, JSON.
+
+Mở file vite.config.js và thêm thuộc tính base:
+
+JavaScript
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  base: '/LSD/', // Rất quan trọng để chạy trên thư mục con
+  // ... các cấu hình khác nếu có
+})
+Lưu ý trong code main.js: Khi load file mindmap.json, hãy đảm bảo bạn dùng đường dẫn tương đối để Vite tự xử lý, ví dụ: d3.json('./data/mindmap.json') thay vì /data/mindmap.json.
+
+Mở terminal tại thư mục mindmap-app/ và chạy lệnh build:
+
+Bash
+npm run build
+# hoặc yarn build
+Sau khi chạy, bạn sẽ có một thư mục tên là dist. Đây là toàn bộ source code đã được đóng gói để sẵn sàng đưa lên mạng.
+
+Bước 2: Cài đặt Web Server (Khuyên dùng Nginx)
+Để máy tính có thể "phục vụ" người dùng truy cập vào xem web, bạn cần một Web Server. Nginx là lựa chọn tốt nhất.
+
+Tải và cài đặt Nginx cho máy tính của bạn (Windows hoặc Linux).
+
+Tạo một thư mục chứa dự án trên ổ cứng, ví dụ: C:\nginx\html\LSD (trên Windows) hoặc /var/www/html/LSD (trên Linux).
+
+Copy toàn bộ các file TRONG thư mục dist (vừa tạo ở Bước 1) paste vào thư mục LSD vừa tạo.
+
+Mở file cấu hình Nginx (nginx.conf), tìm block server và thêm cấu hình sau:
+
+Nginx
+server {
+    listen       80;
+    server_name  minhtritm.id.vn;
+
+    # Cấu hình cho đường dẫn /LSD
+    location /LSD/ {
+        alias C:/nginx/html/LSD/; # Thay bằng đường dẫn thực tế của bạn
+        index index.html;
+        try_files $uri $uri/ /LSD/index.html;
+    }
+
+    # (Tùy chọn) Nếu ai đó vào thẳng domain gốc, có thể báo lỗi hoặc chuyển hướng
+    location / {
+        return 404;
+    }
+}
+Khởi động lại Nginx. Lúc này, nếu bạn gõ http://localhost/LSD trên máy nhà, bạn sẽ thấy ứng dụng của mình.
+
+Bước 3: Mở Port (Port Forwarding) trên Router
+Để người ngoài internet có thể chui vào máy tính của bạn, bạn cần mở cổng trên cục modem Wifi.
+
+Mở Command Prompt (Windows) gõ ipconfig hoặc Terminal (Linux) gõ ip a để lấy IPv4 Address của máy tính (Ví dụ: 192.168.1.15).
+
+Đăng nhập vào trang quản trị của Modem mạng (thường là 192.168.1.1 hoặc 192.168.0.1).
+
+Tìm mục Port Forwarding, Virtual Server, hoặc NAT Forwarding.
+
+Tạo một rule mới:
+
+Internal IP (IP Nội bộ): Nhập IP máy tính của bạn (ví dụ: 192.168.1.15).
+
+Internal Port (Cổng Nội bộ): 80 (Port của Nginx).
+
+External Port (Cổng Bên ngoài): 80.
+
+Protocol: TCP.
+
+Lưu lại và khởi động lại modem.
+
+Bước 4: Trỏ Tên Miền (Domain)
+Lên Google gõ "What is my IP" để lấy IP Public (IP WAN) của nhà bạn (Ví dụ: 14.22.x.x).
+
+Đăng nhập vào nơi bạn mua tên miền (Tentens, Mắt Bão, Cloudflare,...).
+
+Vào phần Quản lý DNS, tạo một bản ghi như sau:
+
+Loại (Type): A
+
+Tên (Name): @ (hoặc nhập minhtritm.id.vn)
+
+Giá trị (Value): Nhập IP Public ở bước 1 vào đây.
+
+Đợi khoảng 5-15 phút để DNS cập nhật. Sau đó dùng điện thoại (tắt Wifi, dùng 4G) truy cập vào [http://minhtritm.id.vn/LSD](http://minhtritm.id.vn/LSD) để tận hưởng thành quả.
+
+Lựa chọn vô cùng tuyệt vời! Dùng Cloudflare Tunnel (hay còn gọi là cloudflared) là cách an toàn và chuyên nghiệp nhất hiện nay để chạy web tại nhà. Bạn sẽ được cấp sẵn HTTPS (ổ khóa xanh) và không cần mở bất kỳ Port nào trên cục Wifi, giúp máy tính an toàn tuyệt đối trước các đợt rà quét trên mạng.
+
+Để thực hiện, hãy đảm bảo tên miền minhtritm.id.vn của bạn đã được thêm vào Cloudflare (đã trỏ Nameserver về Cloudflare). Sau đó, hãy làm theo 4 bước sau:
+
+Bước 1: Tạo Tunnel trên Cloudflare
+Đăng nhập vào Cloudflare Dashboard.
+
+Ở menu bên trái, tìm và click vào Zero Trust (Nếu đây là lần đầu, Cloudflare sẽ yêu cầu bạn chọn một gói, cứ chọn gói Free / Zero Trust Free, có thể cần nhập thẻ Visa nhưng sẽ không bị trừ tiền).
+
+Trong giao diện Zero Trust, nhìn menu bên trái chọn Networks > Tunnels.
+
+Bấm nút Create a tunnel.
+
+Chọn Cloudflared và bấm Next.
+
+Đặt tên cho Tunnel (ví dụ: Home-PC-Nginx) và bấm Save tunnel.
+
+Bước 2: Cài đặt cloudflared lên máy tính nhà bạn
+Sau khi lưu, Cloudflare sẽ hiện ra một bảng hướng dẫn cài đặt.
+
+Chọn hệ điều hành máy tính của bạn (Windows hoặc Linux).
+
+Cloudflare sẽ cấp cho bạn một đoạn mã lệnh (Command) có chứa sẵn token bí mật của bạn.
+
+Nếu là Windows: Mở PowerShell (nhớ click chuột phải chọn Run as Administrator) và dán đoạn lệnh đó vào rồi nhấn Enter. Lệnh này sẽ tự động tải phần mềm cloudflared và cài đặt nó thành một Service chạy ngầm trên Windows.
+
+Nếu là Linux: Copy lệnh dành cho Linux và chạy trong Terminal.
+
+Chờ vài chục giây, nhìn xuống dưới cùng của trang Cloudflare, nếu thấy dòng trạng thái chuyển sang Connected (màu xanh lá) là máy tính đã kết nối thành công với máy chủ Cloudflare. Bấm Next.
+
+Bước 3: Định tuyến tên miền (Public Hostname)
+Bây giờ bạn cần bảo Cloudflare: "Khi có ai truy cập vào tên miền của tôi, hãy đẩy cục dữ liệu đó qua đường ống (tunnel) về thẳng cổng 80 trên máy tính".
+
+Trong tab Public Hostname, bạn cấu hình như sau:
+
+Subdomain: Để trống (nếu bạn muốn chạy thẳng trên minhtritm.id.vn) hoặc điền www tùy ý.
+
+Domain: Chọn minhtritm.id.vn từ danh sách thả xuống.
+
+Path: Để trống. (Nginx ở máy bạn sẽ tự lo phần /LSD).
+
+Service:
+
+Type: Chọn HTTP
+
+URL: Nhập localhost:80 (Vì Nginx trên máy bạn đang chạy ở port 80).
+
+Bấm Save tunnel.
+
+Bước 4: Tận hưởng và Dọn dẹp
+Dọn dẹp (Quan trọng): Hãy vào lại cục Modem Wifi và XÓA cái Rule Port Forwarding (Mở port 80) mà bạn đã tạo trước đó đi. Bạn không cần nó nữa, đóng lại cho an toàn!
+
+Kiểm tra: Tắt Wifi trên điện thoại, dùng mạng 4G và truy cập vào:
+[https://minhtritm.id.vn/LSD](https://minhtritm.id.vn/LSD)

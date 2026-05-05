@@ -1,0 +1,109 @@
+{
+  "name": "LỊCH SỬ ĐẢNG CỘNG SẢN VIỆT NAM",
+  "details": "Sơ đồ tư duy học thuật siêu chi tiết (1858 - 2026)",
+  "children": [
+    {
+      "name": "PHẦN 1: QUÁ TRÌNH PHÁP XÂM LƯỢC & HỆ QUẢ",
+      "children": [
+        {
+          "name": "1. Giai đoạn xâm lược & Hiệp ước (1858-1884)",
+          "children": [
+            { "name": "1/9/1858: Pháp-TBN tấn công Sơn Trà", "details": "Kế hoạch 'đánh nhanh thắng nhanh' bị phá sản bởi phòng tuyến của Nguyễn Tri Phương." },
+            { "name": "17/2/1859: Pháp chiếm Gia Định", "details": "Khởi nghĩa Nguyễn Trung Trực đốt tàu Hy Vọng (1861)." },
+            { "name": "5/6/1862: Hiệp ước Nhâm Tuất", "details": "Cắt 3 tỉnh miền Đông Nam Kỳ, bồi thường chiến phí." },
+            { "name": "1867: Mất 3 tỉnh miền Tây", "details": "Toàn bộ Nam Kỳ rơi vào tay Pháp. Phan Thanh Giản tuyệt thực." },
+            { "name": "15/3/1874: Hiệp ước Giáp Tuất", "details": "Triều đình Huế chính thức công nhận Nam Kỳ hoàn toàn thuộc Pháp." },
+            { "name": "25/8/1883: Hiệp ước Harmand", "details": "Thừa nhận nền bảo hộ của Pháp ở Bắc Kỳ và Trung Kỳ. Mất tư cách quốc gia." },
+            { "name": "6/6/1884: Hiệp ước Patenôtre", "details": "Chuyển sang chế độ thuộc địa nửa phong kiến. Chấm dứt nhà nước phong kiến độc lập." }
+          ]
+        },
+        {
+          "name": "2. Quyết sách Lâm thời (1945-1946)",
+          "children": [
+            { "name": "Đối nội: Diệt giặc đói, dốt", "details": "Tuần lễ Vàng, Nha Bình dân học vụ, Tổng tuyển cử (6/1/1946)." },
+            { "name": "6/3/1946: Hiệp định Sơ bộ", "details": "Cho 15.000 quân Pháp vào thay Tưởng. Pháp công nhận VN tự do. Đẩy 20 vạn quân Tưởng về nước." },
+            { "name": "14/9/1946: Tạm ước", "details": "Kéo dài thời gian chuẩn bị lực lượng. Nhượng bộ kinh tế/văn hóa." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PHẦN 2: HÀNH TRÌNH CỦA CHỦ TỊCH HỒ CHÍ MINH",
+      "children": [
+        {
+          "name": "1890-1920: Tìm đường cứu nước",
+          "children": [
+            { "name": "19/5/1890: Sinh ra tại Nghệ An", "details": "Tên khai sinh Nguyễn Sinh Cung." },
+            { "name": "5/6/1911: Rời bến Nhà Rồng", "details": "Làm phụ bếp, tên Văn Ba." },
+            { "name": "18/6/1919: Bản Yêu sách 8 điểm", "details": "Gửi Hội nghị Versailles, lần đầu dùng tên Nguyễn Ái Quốc." },
+            { "name": "Tháng 7/1920: Đọc Sơ thảo của Lênin", "details": "Tìm ra con đường cách mạng vô sản." },
+            { "name": "Tháng 12/1920: Tham gia lập Đảng CS Pháp", "details": "Người cộng sản Việt Nam đầu tiên." }
+          ]
+        },
+        {
+          "name": "1921-1930: Chuẩn bị thành lập Đảng",
+          "children": [
+            { "name": "1921-1923: Tại Pháp", "details": "Lập Hội Liên hiệp thuộc địa, báo Le Paria." },
+            { "name": "Tháng 6/1925: Hội VNCM Thanh niên", "details": "Lớp huấn luyện cán bộ, tác phẩm Đường Kách mệnh." },
+            { "name": "3/2/1930: Thành lập Đảng", "details": "Tại Cửu Long, Hồng Kông. Soạn thảo Cương lĩnh đầu tiên." }
+          ]
+        },
+        {
+          "name": "1931-1969: Lãnh đạo Kháng chiến",
+          "children": [
+            { "name": "28/1/1941: Về nước (Pác Bó)", "details": "Sau 30 năm bôn ba. Chủ trì HNTW 8." },
+            { "name": "2/9/1945: Tuyên ngôn Độc lập", "details": "Đọc tại Quảng trường Ba Đình." },
+            { "name": "19/12/1946: Lời kêu gọi Toàn quốc kháng chiến", "details": "Thà hy sinh tất cả, chứ nhất định không chịu mất nước." },
+            { "name": "17/7/1966: Lời kêu gọi thiêng liêng", "details": "'Không có gì quý hơn độc lập, tự do'." },
+            { "name": "2/9/1969: Bác từ trần", "details": "Viết và để lại bản Di chúc lịch sử." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PHẦN 3: BỐI CẢNH QUỐC TẾ",
+      "children": [
+        {
+          "name": "1930-1945: CTTG II",
+          "details": "Nhật đầu hàng Đồng minh, tạo 'thời cơ vàng' nổ ra Tổng khởi nghĩa Tháng Tám 1945."
+        },
+        {
+          "name": "1945-1975: Cục diện 2 phe",
+          "details": "Liên Xô, TQ viện trợ. Đảng duy trì đường lối tự chủ giữa mâu thuẫn Xô-Trung."
+        },
+        {
+          "name": "1991-Nay: Hội nhập Toàn cầu",
+          "details": "Bình thường hóa với TQ (1991), Mỹ (1995). Gia nhập WTO (2007). Ngoại giao Cây tre."
+        }
+      ]
+    },
+    {
+      "name": "PHẦN 4: CÁC KỲ ĐẠI HỘI ĐẢNG",
+      "children": [
+        {
+          "name": "Tiền thân & Thành lập",
+          "children": [
+            { "name": "Tháng 6/1925: Hội VNCM Thanh niên", "details": "Tiền thân của Đảng." },
+            { "name": "1929: 3 tổ chức cộng sản", "details": "Đông Dương CS Đảng, An Nam CS Đảng, Đông Dương CS Liên đoàn." },
+            { "name": "3/2/1930: Hội nghị hợp nhất", "details": "Thành lập Đảng Cộng sản Việt Nam." },
+            { "name": "Tháng 10/1930: HNTW 1", "details": "Đổi tên Đảng CS Đông Dương. Tổng Bí thư: Trần Phú." }
+          ]
+        },
+        { "name": "Đại hội I (Tháng 3/1935)", "details": "Tại Ma Cao. Phục hồi hệ thống tổ chức sau khủng bố trắng 1931." },
+        { "name": "Đại hội II (Tháng 2/1951)", "details": "Ra công khai, lấy tên Đảng Lao động Việt Nam. Bầu Trường Chinh làm TBT." },
+        { "name": "Đại hội III (Tháng 9/1960)", "details": "2 nhiệm vụ: Miền Bắc (hậu phương lớn) và Miền Nam (tiền tuyến lớn)." },
+        { "name": "Đại hội IV (Tháng 12/1976)", "details": "Lấy tên Đảng Cộng sản Việt Nam. Xây dựng CNXH cả nước. Kinh tế bao cấp." },
+        { "name": "Đại hội V (Tháng 3/1982)", "details": "Tập trung mặt trận nông nghiệp và hàng tiêu dùng." },
+        { "name": "Đại hội VI (Tháng 12/1986)", "details": "Bước ngoặt ĐỔI MỚI. Chuyển sang nền kinh tế hàng hóa, mở cửa." },
+        { "name": "Đại hội VII (Tháng 6/1991)", "details": "Thông qua Cương lĩnh 1991." },
+        { "name": "Đại hội VIII (Tháng 6/1996)", "details": "Thời kỳ Đẩy mạnh Công nghiệp hóa - Hiện đại hóa." },
+        { "name": "Đại hội IX (Tháng 4/2001)", "details": "Định hình mô hình: Kinh tế thị trường định hướng XHCN." },
+        { "name": "Đại hội X (Tháng 4/2006)", "details": "Cho phép Đảng viên làm kinh tế tư nhân." },
+        { "name": "Đại hội XI (Tháng 1/2011)", "details": "Cương lĩnh bổ sung 2011. Tái cơ cấu nền kinh tế." },
+        { "name": "Đại hội XII (Tháng 1/2016)", "details": "Đẩy mạnh quyết liệt phòng chống tham nhũng, 'đốt lò'." },
+        { "name": "Đại hội XIII (Tháng 1/2021)", "details": "Tầm nhìn 2025, 2030 (100 năm Đảng), 2045 (100 năm Nước). Chuyển đổi số." },
+        { "name": "Đại hội XIV (Dự kiến 2026)", "details": "Kỷ nguyên vươn mình của dân tộc. Cách mạng tổ chức (Tinh - Gọn - Mạnh)." }
+      ]
+    }
+  ]
+}

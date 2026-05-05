@@ -1,0 +1,31 @@
+{
+  "name": "HÀNH TRÌNH BÁC HỒ (1890 - 1969)",
+  "details": "Toàn bộ diễn biến tư tưởng và chỉ đạo cách mạng của Chủ tịch Hồ Chí Minh",
+  "children": [
+    {
+      "name": "Tìm đường cứu nước (1911-1920)",
+      "children": [
+        {"name": "5/6/1911: Rời Bến Nhà Rồng", "details": "Tàu Latouche-Tréville, tên Văn Ba. Khảo sát Á, Âu, Phi, Mỹ."},
+        {"name": "18/6/1919: Yêu sách 8 điểm", "details": "Gửi Hội nghị Versailles (Nguyễn Ái Quốc). Rút ra bài học: phải bạo lực cách mạng."},
+        {"name": "7/1920: Đọc Luận cương Lênin", "details": "Chấm dứt khủng hoảng đường lối cứu nước. Tìm thấy CM Vô sản."},
+        {"name": "12/1920: Lập ĐCS Pháp", "details": "Bỏ phiếu gia nhập Quốc tế 3. Là người cộng sản VN đầu tiên."}
+      ]
+    },
+    {
+      "name": "Chuẩn bị lập Đảng (1921-1930)",
+      "children": [
+        {"name": "Về Tư tưởng", "details": "Báo Người cùng khổ (1922), Bản án chế độ thực dân Pháp (1925), Đường Kách mệnh (1927)."},
+        {"name": "Về Tổ chức", "details": "Lập Hội VN CM Thanh niên (6/1925) tại Quảng Châu. Mở lớp đào tạo cán bộ."}
+      ]
+    },
+    {
+      "name": "Lãnh đạo 2 cuộc Kháng chiến (1941-1969)",
+      "children": [
+        {"name": "28/1/1941: Về nước", "details": "Qua cột mốc 108 Pác Bó. Chủ trì HNTW 8, hoàn chỉnh đường lối GPDT."},
+        {"name": "1946: Dĩ bất biến, ứng vạn biến", "details": "Ký Hiệp định Sơ bộ và Tạm ước, gạt bỏ quân Tưởng."},
+        {"name": "19/12/1946: Lời kêu gọi Toàn quốc kháng chiến", "details": "Thà hy sinh tất cả, không chịu mất nước."},
+        {"name": "17/7/1966: Lời kêu gọi thiêng liêng", "details": "Không có gì quý hơn độc lập, tự do."}
+      ]
+    }
+  ]
+}
