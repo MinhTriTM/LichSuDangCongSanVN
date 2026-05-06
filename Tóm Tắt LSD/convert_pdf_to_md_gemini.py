@@ -7,7 +7,7 @@ from vertexai.generative_models import GenerativeModel, Part
 # ==============================================================================
 PROJECT_ID = "tool-dich-thuat"
 LOCATION = "us-central1" # Vertex AI hỗ trợ tốt nhất ở us-central1
-MODEL_ID = "gemini-2.5-flash-lite-preview-09-2025"
+MODEL_ID = "gemini-2.5-flash"
 
 # Danh sách các file cục bộ
 PDF_FILES = [
