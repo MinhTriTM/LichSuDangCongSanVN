@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>🔧 Sửa Lỗi JSON - LSD Quiz Fixer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+            color: #c9d1d9; min-height: 100vh; padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 { 
+            text-align: center; color: #58a6ff; margin-bottom: 30px; font-size: 28px;
+            text-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+        }
+        .card {
+            background: #21262d; border: 1px solid #30363d; border-radius: 12px;
+            padding: 20px; margin: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .card h3 { color: #58a6ff; margin-bottom: 10px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; border: none; border-radius: 8px;
+            font-size: 15px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s ease; color: white; text-decoration: none;
+        }
+        .btn-primary { background: linear-gradient(135deg, #238636, #2ea043); }
+        .btn-blue { background: linear-gradient(135deg, #1f6feb, #388bfd); }
+        .btn-orange { background: linear-gradient(135deg, #d29922, #e3b341); color: #1c1c1c; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .center { text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #161b22; color: #58a6ff; padding: 12px; text-align: left; border-bottom: 2px solid #30363d; }
+        td { padding: 10px 12px; border-bottom: 1px solid #21262d; }
+        tr:hover td { background: #161b22; }
+        .badge { 
+            display: inline-block; padding: 3px 10px; border-radius: 20px; 
+            font-size: 12px; font-weight: 600;
+        }
+        .badge-green { background: #238636; color: #fff; }
+        .badge-yellow { background: #d29922; color: #1c1c1c; }
+        .badge-red { background: #da3633; color: #fff; }
+        details { margin: 8px 0; }
+        summary {
+            cursor: pointer; padding: 10px 15px; background: #161b22;
+            border: 1px solid #30363d; border-radius: 8px; color: #58a6ff;
+            font-weight: 600; transition: all 0.2s;
+        }
+        summary:hover { background: #1c2128; }
+        details[open] summary { border-radius: 8px 8px 0 0; }
+        .detail-content {
+            background: #0d1117; border: 1px solid #30363d; border-top: none;
+            border-radius: 0 0 8px 8px; padding: 15px;
+            max-height: 400px; overflow-y: auto; font-size: 13px;
+            font-family: 'Cascadia Code', 'Fira Code', monospace;
+            white-space: pre-wrap; line-height: 1.6;
+        }
+        #progressContainer { display: none; margin: 20px 0; }
+        #progressBar {
+            width: 100%; height: 10px; background: #30363d; border-radius: 5px; overflow: hidden;
+        }
+        #progressFill {
+            height: 100%; background: linear-gradient(90deg, #238636, #2ea043, #3fb950);
+            border-radius: 5px; width: 0%; transition: width 0.4s ease;
+        }
+        #progressText { text-align: center; margin-top: 8px; color: #8b949e; font-size: 14px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+        .stat-item {
+            background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+            padding: 15px; text-align: center;
+        }
+        .stat-item .number { font-size: 28px; font-weight: 700; color: #58a6ff; }
+        .stat-item .label { font-size: 12px; color: #8b949e; margin-top: 5px; }
+        .drop-zone {
+            border: 2px dashed #30363d; border-radius: 12px; padding: 40px;
+            text-align: center; transition: all 0.3s; cursor: pointer;
+        }
+        .drop-zone:hover, .drop-zone.dragover {
+            border-color: #58a6ff; background: rgba(88, 166, 255, 0.05);
+        }
+        .drop-zone .icon { font-size: 48px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🔧 Công Cụ Sửa Lỗi JSON - Ngân Hàng Câu Hỏi LSD</h1>
+
+    <!-- Bước 1: Tải file -->
+    <div class="card" id="step1">
+        <h3>📂 Bước 1: Chọn file JSON</h3>
+        <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+            <div class="icon">📄</div>
+            <p>Kéo thả file JSON vào đây hoặc <strong>click để chọn</strong></p>
+            <p style="color:#8b949e; font-size:13px; margin-top:5px">Hỗ trợ: tracnghiem_LSD_chuong_gemini.json</p>
+        </div>
+        <input type="file" id="fileInput" accept=".json" style="display:none">
+    </div>
+
+    <!-- Progress -->
+    <div id="progressContainer">
+        <div id="progressBar"><div id="progressFill"></div></div>
+        <div id="progressText">Đang xử lý...</div>
+    </div>
+
+    <!-- Kết quả -->
+    <div id="results" style="display:none"></div>
+</div>
+
+<script>
+let rawData = null;
+
+// Drag & drop
+const dropZone = document.getElementById('dropZone');
+['dragenter','dragover'].forEach(e => dropZone.addEventListener(e, ev => { ev.preventDefault(); dropZone.classList.add('dragover'); }));
+['dragleave','drop'].forEach(e => dropZone.addEventListener(e, ev => { ev.preventDefault(); dropZone.classList.remove('dragover'); }));
+dropZone.addEventListener('drop', ev => { if (ev.dataTransfer.files.length) loadFile(ev.dataTransfer.files[0]); });
+document.getElementById('fileInput').addEventListener('change', ev => { if (ev.target.files.length) loadFile(ev.target.files[0]); });
+
+function loadFile(file) {
+    const reader = new FileReader();
+    reader.onload = ev => {
+        try {
+            rawData = JSON.parse(ev.target.result);
+            dropZone.innerHTML = `<div class="icon">✅</div><p>Đã tải: <strong>${file.name}</strong></p><p style="color:#3fb950">${rawData.questions.length} câu hỏi</p>`;
+            setTimeout(() => startFix(), 500);
+        } catch(err) {
+            dropZone.innerHTML = `<div class="icon">❌</div><p style="color:#f85149">Lỗi: ${err.message}</p>`;
+        }
+    };
+    reader.readAsText(file, 'utf-8');
+}
+
+function setProgress(pct, text) {
+    document.getElementById('progressContainer').style.display = 'block';
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = text || `Đang xử lý... ${pct}%`;
+}
+
+function startFix() {
+    if (!rawData) return;
+    const data = JSON.parse(JSON.stringify(rawData));
+    let questions = data.questions;
+    const totalOriginal = questions.length;
+    
+    setProgress(5, 'Đang sửa lỗi OCR...');
+    
+    // === LỖI 5: OCR ===
+    let ocrFixes = 0;
+    const ocrDetails = [];
+    [['chQ','chủ'],['cQa','của'],['phQ','phủ'],['PhQ','Phủ']].forEach(([old,nw]) => {
+        questions.forEach((q,i) => {
+            if (q.question.includes(old)) { ocrDetails.push(`[${i}] question: "${old}"→"${nw}"`); q.question=q.question.replaceAll(old,nw); ocrFixes++; }
+            if (q.answer.includes(old)) { q.answer=q.answer.replaceAll(old,nw); ocrFixes++; }
+            q.options = q.options.map((o,j) => { if(o.includes(old)){ocrFixes++;ocrDetails.push(`[${i}] opt${String.fromCharCode(65+j)}: "${old}"→"${nw}"`);return o.replaceAll(old,nw);}return o; });
+        });
+    });
+
+    setTimeout(() => {
+        setProgress(20, 'Đang xóa số dính đầu...');
+        
+        // === LỖI 1b: Số dính ===
+        let digitFixes = 0;
+        const digitDetails = [];
+        questions.forEach((q,i) => {
+            const t=q.question.trim();
+            if (/^\d+\s+[A-ZĐ]/.test(t)) {
+                digitDetails.push(`[${i}] "${t.substring(0,60)}" → "${t.replace(/^\d+\s+/,'').substring(0,60)}"`);
+                q.question=t.replace(/^\d+\s+/,''); digitFixes++;
+            }
+        });
+
+        setTimeout(() => {
+            setProgress(40, 'Đang sửa thứ tự đáp án...');
+            
+            // === LỖI 4: Thứ tự ===
+            const el=['A','B','C','D'];
+            let orderFixes=0;
+            const orderDetails=[];
+            questions.forEach((q,i) => {
+                const letters=q.options.map(o=>{const m=o.trim().match(/^([A-Z])\./);return m?m[1]:'?';});
+                const exp=el.slice(0,q.options.length);
+                if (JSON.stringify(letters)!==JSON.stringify(exp)) {
+                    orderDetails.push(`[${i}] ${letters.join(',')}→${exp.join(',')}`);
+                    q.options.forEach((opt,j)=>{const n=opt.trim().replace(/^[A-Z]\.\s/,el[j]+'. ');if(opt.trim()===q.answer.trim())q.answer=n;q.options[j]=n;});
+                    orderFixes++;
+                }
+            });
+
+            setTimeout(() => {
+                setProgress(60, 'Đang loại bỏ câu trùng...');
+                
+                // === LỖI 6: Loại trùng ===
+                const countMap={};
+                questions.forEach(q=>{const t=q.question.trim();countMap[t]=(countMap[t]||0)+1;});
+                const dupeGroups=Object.entries(countMap).filter(([_,c])=>c>1).sort((a,b)=>b[1]-a[1]);
+                const seen=new Set(),uniqueQ=[];
+                let removed=0;
+                questions.forEach(q=>{const t=q.question.trim();if(!seen.has(t)){seen.add(t);uniqueQ.push(q);}else{removed++;}});
+                
+                data.questions=uniqueQ; data.totalQ=uniqueQ.length;
+                const sc={};uniqueQ.forEach(q=>{sc[q.section]=(sc[q.section]||0)+1;});
+                data.sections.forEach(s=>{s.count=sc[s.key]||0;});
+
+                setTimeout(() => {
+                    setProgress(80, 'Đang phân tích lỗi còn lại...');
+                    
+                    // === THỐNG KÊ LỖI CÒN LẠI ===
+                    const lowerStart=[], missingOpts=[], cutAnswers=[];
+                    const cutWords=[' và',' của',' tư',' cho',' để',' là',' về',' theo',' trong',' với',' đã',' một',' các',' có',' được',' do',' từ',' lên',' ra',' vào',' mà'];
+                    uniqueQ.forEach((q,i)=>{
+                        const text=q.question.trim();
+                        if(text&&/^[a-zàáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ]/.test(text))
+                            lowerStart.push({idx:i,text:text.substring(0,150)});
+                        if(q.options.length<4)
+                            missingOpts.push({idx:i,count:q.options.length,text:text.substring(0,100)});
+                        q.options.forEach((opt,j)=>{
+                            const clean=opt.trim();const last=clean[clean.length-1];
+                            if(last&&!'.)?!…;:"\''.includes(last)){
+                                for(const cw of cutWords){if(clean.endsWith(cw)){cutAnswers.push({idx:i,letter:String.fromCharCode(65+j),ending:clean.slice(-70),qText:text.substring(0,80)});break;}}
+                            }
+                        });
+                    });
+
+                    setProgress(100, 'Hoàn tất! ✅');
+                    
+                    // === RENDER ===
+                    renderResults(data, {
+                        totalOriginal, uniqueQ, removed, ocrFixes, digitFixes, orderFixes,
+                        lowerStart, missingOpts, cutAnswers, dupeGroups,
+                        ocrDetails, digitDetails, orderDetails
+                    });
+                }, 100);
+            }, 100);
+        }, 100);
+    }, 100);
+}
+
+function renderResults(data, stats) {
+    const {totalOriginal, uniqueQ, removed, ocrFixes, digitFixes, orderFixes,
+           lowerStart, missingOpts, cutAnswers, dupeGroups,
+           ocrDetails, digitDetails, orderDetails} = stats;
+    
+    let html = '';
+    
+    // Stats grid
+    html += '<div class="card"><h3>📊 Tổng quan kết quả</h3><div class="stat-grid">';
+    html += `<div class="stat-item"><div class="number">${totalOriginal}</div><div class="label">Câu gốc</div></div>`;
+    html += `<div class="stat-item"><div class="number" style="color:#3fb950">${uniqueQ.length}</div><div class="label">Sau sửa</div></div>`;
+    html += `<div class="stat-item"><div class="number" style="color:#f85149">${removed}</div><div class="label">Đã loại trùng</div></div>`;
+    html += `<div class="stat-item"><div class="number" style="color:#d29922">${lowerStart.length + missingOpts.length + cutAnswers.length}</div><div class="label">Cần sửa thủ công</div></div>`;
+    html += '</div></div>';
+
+    // Fix summary table
+    html += '<div class="card"><h3>✅ Các lỗi đã sửa tự động</h3><table>';
+    html += '<tr><th>Loại lỗi</th><th>Số lượng</th><th>Trạng thái</th></tr>';
+    html += `<tr><td>Lỗi 5: OCR (chQ, cQa, phQ)</td><td>${ocrFixes}</td><td><span class="badge badge-green">✅ Đã sửa</span></td></tr>`;
+    html += `<tr><td>Lỗi 1b: Số dính ở đầu câu</td><td>${digitFixes}</td><td><span class="badge badge-green">✅ Đã sửa</span></td></tr>`;
+    html += `<tr><td>Lỗi 4: Sai thứ tự A,B,C,D</td><td>${orderFixes}</td><td><span class="badge badge-green">✅ Đã sửa</span></td></tr>`;
+    html += `<tr><td>Lỗi 6: Câu hỏi trùng lặp</td><td>${removed} (${dupeGroups.length} nhóm)</td><td><span class="badge badge-green">✅ Đã xóa</span></td></tr>`;
+    html += '</table>';
+    
+    if (ocrDetails.length) { html += `<details><summary>Chi tiết OCR (${ocrDetails.length})</summary><div class="detail-content">${ocrDetails.join('\n')}</div></details>`; }
+    if (digitDetails.length) { html += `<details><summary>Chi tiết số dính (${digitDetails.length})</summary><div class="detail-content">${digitDetails.join('\n')}</div></details>`; }
+    if (orderDetails.length) { html += `<details><summary>Chi tiết thứ tự (${orderDetails.length})</summary><div class="detail-content">${orderDetails.join('\n')}</div></details>`; }
+    if (dupeGroups.length) {
+        html += `<details><summary>Chi tiết câu trùng (${dupeGroups.length} nhóm)</summary><div class="detail-content">`;
+        dupeGroups.forEach(([text,count])=>{html+=`[${count} lần] ${text.substring(0,120)}\n`;});
+        html += '</div></details>';
+    }
+    html += '</div>';
+
+    // Manual fix needed
+    html += '<div class="card"><h3>⚠️ Lỗi cần sửa thủ công</h3><table>';
+    html += '<tr><th>Loại lỗi</th><th>Số lượng</th><th>Trạng thái</th></tr>';
+    html += `<tr><td>Lỗi 1: Mất chữ đầu câu hỏi</td><td>${lowerStart.length}</td><td><span class="badge badge-yellow">⚠️ Thủ công</span></td></tr>`;
+    html += `<tr><td>Lỗi 3: Thiếu đáp án (&lt;4)</td><td>${missingOpts.length}</td><td><span class="badge badge-yellow">⚠️ Thủ công</span></td></tr>`;
+    html += `<tr><td>Lỗi 2: Đáp án bị cắt xén</td><td>${cutAnswers.length}</td><td><span class="badge badge-yellow">⚠️ Thủ công</span></td></tr>`;
+    html += '</table>';
+
+    if (lowerStart.length) {
+        html += `<details><summary>🔤 Lỗi 1: Mất chữ đầu (${lowerStart.length} câu)</summary><div class="detail-content">`;
+        lowerStart.forEach(({idx,text})=>{html+=`[Câu ${idx}] ${escapeHtml(text)}\n`;});
+        html += '</div></details>';
+    }
+    if (missingOpts.length) {
+        html += `<details><summary>📋 Lỗi 3: Thiếu đáp án (${missingOpts.length} câu)</summary><div class="detail-content">`;
+        missingOpts.forEach(({idx,count,text})=>{html+=`[Câu ${idx}] Chỉ có ${count} đáp án: ${escapeHtml(text)}\n`;});
+        html += '</div></details>';
+    }
+    if (cutAnswers.length) {
+        html += `<details><summary>✂️ Lỗi 2: Đáp án cắt xén (${cutAnswers.length})</summary><div class="detail-content">`;
+        cutAnswers.forEach(({idx,letter,ending,qText})=>{html+=`[Câu ${idx}] ${letter}: ...${escapeHtml(ending)}\n  → ${escapeHtml(qText)}\n\n`;});
+        html += '</div></details>';
+    }
+    html += '</div>';
+
+    // Section breakdown
+    html += '<div class="card"><h3>📈 Phân bố theo chương</h3><table>';
+    html += '<tr><th>Chương</th><th>Số câu</th></tr>';
+    data.sections.forEach(s=>{html+=`<tr><td>${s.label}</td><td><strong>${s.count}</strong></td></tr>`;});
+    html += '</table></div>';
+
+    // Download buttons
+    html += '<div class="card center">';
+    html += '<h3>📥 Tải file đã sửa</h3><br>';
+    
+    const jsonStr = JSON.stringify(data, null, 2);
+    const jsonBlob = new Blob([jsonStr], {type:'application/json;charset=utf-8'});
+    const jsonUrl = URL.createObjectURL(jsonBlob);
+    html += `<a class="btn btn-primary" href="${jsonUrl}" download="tracnghiem_LSD_chuong_gemini_fixed.json">📥 Tải JSON đã sửa (${uniqueQ.length} câu)</a> `;
+    
+    // Tạo báo cáo Markdown
+    let md = `# Báo cáo sửa lỗi\n\n`;
+    md += `| Hạng mục | Số lượng |\n|---|---|\n`;
+    md += `| Câu gốc | ${totalOriginal} |\n| Sau sửa | ${uniqueQ.length} |\n| Loại trùng | ${removed} |\n`;
+    md += `| OCR | ${ocrFixes} |\n| Số dính | ${digitFixes} |\n| Thứ tự | ${orderFixes} |\n\n`;
+    md += `## Lỗi cần sửa thủ công\n\n### Mất chữ đầu (${lowerStart.length})\n`;
+    lowerStart.forEach(({idx,text})=>{md+=`- [${idx}] ${text}\n`;});
+    md += `\n### Thiếu đáp án (${missingOpts.length})\n`;
+    missingOpts.forEach(({idx,count,text})=>{md+=`- [${idx}] ${count} ĐA: ${text}\n`;});
+    md += `\n### Đáp án cắt (${cutAnswers.length})\n`;
+    cutAnswers.forEach(({idx,letter,ending})=>{md+=`- [${idx}] ${letter}: ${ending}\n`;});
+    
+    const mdBlob = new Blob([md], {type:'text/markdown;charset=utf-8'});
+    const mdUrl = URL.createObjectURL(mdBlob);
+    html += `<a class="btn btn-blue" href="${mdUrl}" download="bao_cao_loi.md">📋 Tải báo cáo lỗi</a> `;
+    
+    // Tạo file chỉ có câu hỏi cần sửa thủ công
+    const manualFix = {
+        lowerStart: lowerStart.map(({idx,text})=>({index:idx, question:uniqueQ[idx]})),
+        missingOpts: missingOpts.map(({idx})=>({index:idx, question:uniqueQ[idx]})),
+        cutAnswers: cutAnswers.map(({idx,letter,ending})=>({index:idx, optLetter:letter, question:uniqueQ[idx]}))
+    };
+    const mfBlob = new Blob([JSON.stringify(manualFix,null,2)], {type:'application/json;charset=utf-8'});
+    const mfUrl = URL.createObjectURL(mfBlob);
+    html += `<a class="btn btn-orange" href="${mfUrl}" download="cau_can_sua_thu_cong.json">⚠️ Tải danh sách cần sửa</a>`;
+    
+    html += '</div>';
+
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('results').innerHTML = html;
+}
+
+function escapeHtml(text) {
+    return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+</script>
+</body>
+</html>
