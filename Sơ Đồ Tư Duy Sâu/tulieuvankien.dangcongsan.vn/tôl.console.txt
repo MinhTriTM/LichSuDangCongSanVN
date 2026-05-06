@@ -1,0 +1,79 @@
+(async () => {
+  const menuLinks = Array.from(document.querySelectorAll('ul#fluid-nav-positive11 li a'));
+  const finalData = [];
+
+  console.log(`🚀 Bắt đầu cào dữ liệu cho ${menuLinks.length} kỳ Đại hội...`);
+
+  for (const menuLink of menuLinks) {
+    const daiHoiTitle = menuLink.innerText.trim();
+    const daiHoiUrl = menuLink.href;
+    
+    console.log(`--- 📂 Đang xử lý: ${daiHoiTitle} ---`);
+    
+    try {
+      const response = await fetch(daiHoiUrl);
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      
+      const articleLinks = Array.from(doc.querySelectorAll('.article-title.common-title a'));
+      const articlesInDaiHoi = [];
+
+      for (const aLink of articleLinks) {
+        const articleTitle = aLink.innerText.trim();
+        const articleUrl = aLink.href;
+
+        try {
+          const artRes = await fetch(articleUrl);
+          const artHtml = await artRes.text();
+          const artDoc = parser.parseFromString(artHtml, 'text/html');
+          
+          const contentEl = artDoc.querySelector('.article-content.font-size-text.clearfix.common-content.mb-20');
+          let cleanText = "";
+          
+          if (contentEl) {
+             // Tạo bản sao để không làm hỏng trang hiện tại
+             const clone = contentEl.cloneNode(true);
+             
+             // THAY THẾ <BR> THÀNH \n
+             clone.querySelectorAll('br').forEach(br => {
+               br.replaceWith('\n');
+             });
+             
+             // Lấy nội dung text (lúc này đã có dấu xuống dòng \n tại vị trí các thẻ <br>)
+             cleanText = clone.innerText;
+             
+             // Làm sạch: Xóa khoảng trắng đầu cuối, nhưng giữ lại các dấu xuống dòng \n bên trong
+             cleanText = cleanText.trim();
+          }
+
+          articlesInDaiHoi.push({
+            fileName: articleTitle.replace(/[\\/:*?"<>|]/g, '_') + ".txt",
+            text: cleanText
+          });
+          console.log(`   ✅ Đã xong: ${articleTitle.substring(0, 30)}...`);
+        } catch (e) {
+          console.error(`   ❌ Lỗi bài viết: ${articleTitle}`, e);
+        }
+      }
+
+      finalData.push({
+        folderName: daiHoiTitle,
+        files: articlesInDaiHoi
+      });
+
+    } catch (err) {
+      console.error(`❌ Lỗi kỳ Đại hội: ${daiHoiTitle}`, err);
+    }
+  }
+
+  console.log("🏁 HOÀN TẤT! Đang chuẩn bị file JSON để bạn tải về...");
+  
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(finalData, null, 2));
+  const downloadAnchorNode = document.createElement('a');
+  downloadAnchorNode.setAttribute("href", dataStr);
+  downloadAnchorNode.setAttribute("download", "du_lieu_dai_hoi_enter_line.json");
+  document.body.appendChild(downloadAnchorNode);
+  downloadAnchorNode.click();
+  downloadAnchorNode.remove();
+})();

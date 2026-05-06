@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lịch sử Đảng Cộng sản Việt Nam - Cổng Nghiên cứu Cao cấp</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@200..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle paper texture overlay */
+        .bg-texture {
+            background-color: #f9f9f6;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23906f6a' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Custom Scrollbar for dense content */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dadad7;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #906f6a;
+        }
+
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(249, 249, 246, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(144, 111, 106, 0.2);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f4f4f1 100%);
+            box-shadow: 0 4px 20px rgba(26, 28, 27, 0.05), inset 0 1px 0 rgba(255,255,255,0.8);
+            border: 1px solid rgba(144, 111, 106, 0.15);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(121, 0, 0, 0.08), 0 4px 8px rgba(0,0,0,0.04);
+        }
+
+        /* Tooltip */
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateY(4px) translateX(-50%);
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0) translateX(-50%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f9f9f6", "tertiary-container": "#515050", "primary-fixed": "#ffdad4",
+                        "surface-dim": "#dadad7", "tertiary-fixed-dim": "#c8c6c5", "inverse-primary": "#ffb4a8",
+                        "outline": "#906f6a", "on-secondary-fixed-variant": "#544600", "surface-variant": "#e2e3e0",
+                        "primary-container": "#a50000", "on-primary": "#ffffff", "secondary-container": "#fcd400",
+                        "error-container": "#ffdad6", "surface-container-low": "#f4f4f1", "on-error": "#ffffff",
+                        "error": "#ba1a1a", "on-background": "#1a1c1b", "surface-container-highest": "#e2e3e0",
+                        "tertiary-fixed": "#e5e2e1", "surface": "#f9f9f6", "primary": "#790000",
+                        "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#474746",
+                        "on-tertiary": "#ffffff", "on-primary-container": "#ffaea1", "secondary": "#705d00",
+                        "primary-fixed-dim": "#ffb4a8", "surface-tint": "#bb190e", "on-secondary-fixed": "#221b00",
+                        "surface-container": "#eeeeeb", "on-tertiary-fixed": "#1c1b1b", "on-tertiary-container": "#c4c2c2",
+                        "on-primary-fixed": "#410000", "outline-variant": "#e5beb7", "on-surface": "#1a1c1b",
+                        "secondary-fixed": "#ffe16d", "surface-container-high": "#e8e8e5", "secondary-fixed-dim": "#e9c400",
+                        "on-surface-variant": "#5c403b", "on-error-container": "#93000a", "background": "#f9f9f6",
+                        "on-secondary": "#ffffff", "inverse-on-surface": "#f1f1ee", "inverse-surface": "#2f312f",
+                        "on-primary-fixed-variant": "#930000", "tertiary": "#393939", "on-secondary-container": "#6e5c00"
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem", "2xl": "1rem" },
+                    spacing: { "stack-md": "24px", "margin-mobile": "16px", "gutter": "24px", "container-max": "1440px", "stack-sm": "12px", "unit": "4px", "stack-lg": "48px" },
+                    fontFamily: {
+                        "label-caps": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "h2": ["Newsreader"],
+                        "body-lg": ["Be Vietnam Pro"], "h3": ["Newsreader"], "h1": ["Newsreader"]
+                    },
+                    fontSize: {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h1": ["44px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-texture text-on-background min-h-screen flex flex-col md:flex-row overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Header (Visible only on small screens) -->
+<header class="md:hidden glass-panel sticky top-0 z-50 flex items-center justify-between px-4 py-3 border-b border-outline-variant">
+<div class="font-h3 text-[20px] font-semibold text-primary uppercase tracking-tight">Lịch sử Đảng</div>
+<button class="text-on-surface"><span class="material-symbols-outlined">menu</span></button>
+</header>
+<!-- LEFT SIDEBAR: Navigation & Deep Tools -->
+<aside class="hidden md:flex flex-col w-72 h-screen sticky top-0 border-r border-outline-variant bg-surface-container-low/50 backdrop-blur-sm z-40 shrink-0">
+<!-- Logo Area -->
+<div class="p-6 border-b border-outline-variant/50">
+<h1 class="font-h2 text-[22px] leading-tight font-semibold text-primary uppercase tracking-tight relative">
+<span class="absolute -left-4 top-1 w-1 h-8 bg-primary rounded-r-full"></span>
+                Đảng Cộng sản<br/>Việt Nam
+            </h1>
+<p class="font-label-caps text-on-surface-variant mt-2 text-[10px]">Cổng Nghiên cứu Lịch sử</p>
+</div>
+<!-- Advanced Search & Filters -->
+<div class="p-4 border-b border-outline-variant/50">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px] group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface border border-outline-variant/60 rounded-xl py-2.5 pl-10 pr-10 text-sm font-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-inner" placeholder="Tìm kiếm tài liệu, nghị quyết..." type="text"/>
+<button class="absolute right-2 top-2 p-1 text-on-surface-variant hover:text-primary tooltip">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="tooltip-text absolute top-full mt-1 left-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded whitespace-nowrap z-50 font-body-md">Bộ lọc nâng cao</span>
+</button>
+</div>
+</div>
+<!-- Nested Navigation -->
+<nav class="flex-1 overflow-y-auto p-4 space-y-6">
+<!-- Section 1 -->
+<div>
+<h3 class="font-label-caps text-outline mb-3 px-2 flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">account_balance</span> Chuyên mục chính</h3>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-primary/5 text-primary font-medium transition-colors border border-primary/10" href="#">
+<span class="font-body-md text-sm">Chương trình học</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</a>
+<!-- Nested items -->
+<ul class="ml-4 mt-1 pl-3 border-l-2 border-outline-variant/30 space-y-1">
+<li><a class="block px-2 py-1.5 text-sm font-body-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 rounded transition-colors" href="#">Chương I (1930-1945)</a></li>
+<li><a class="block px-2 py-1.5 text-sm font-body-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 rounded transition-colors" href="#">Chương II (1945-1975)</a></li>
+<li><a class="block px-2 py-1.5 text-sm font-body-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 rounded transition-colors" href="#">Chương III (1975-Nay)</a></li>
+</ul>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface hover:bg-surface-variant/50 transition-colors font-body-md text-sm" href="#">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">topic</span> Chủ đề chuyên sâu
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface hover:bg-surface-variant/50 transition-colors font-body-md text-sm" href="#">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">library_books</span> Kho tư liệu gốc
+                        </a>
+</li>
+</ul>
+</div>
+<!-- Section 2: Analytical Tools -->
+<div>
+<h3 class="font-label-caps text-outline mb-3 px-2 flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">analytics</span> Công cụ phân tích</h3>
+<div class="space-y-2">
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg border border-outline-variant hover:border-primary/50 hover:bg-primary/5 transition-all text-left group">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">compare_arrows</span>
+<div class="flex-1">
+<div class="font-body-md text-sm font-medium text-on-surface">Phân tích đối chiếu</div>
+<div class="font-body-md text-[11px] text-on-surface-variant">So sánh nghị quyết các thời kỳ</div>
+</div>
+</button>
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg border border-outline-variant hover:border-primary/50 hover:bg-primary/5 transition-all text-left group">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">timeline</span>
+<div class="flex-1">
+<div class="font-body-md text-sm font-medium text-on-surface">Bản đồ tiến trình</div>
+<div class="font-body-md text-[11px] text-on-surface-variant">Dữ liệu không gian - thời gian</div>
+</div>
+</button>
+</div>
+</div>
+</nav>
+<!-- User Profile Minimal -->
+<div class="p-4 border-t border-outline-variant/50 flex items-center gap-3 hover:bg-surface-variant/30 cursor-pointer transition-colors">
+<img alt="User" class="w-8 h-8 rounded-full border border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd4oV7itwHZhM8J9nOCIoPl9DARa5l_EHN70t7mWF0T-NwYw3gR29q7pszGrwQY60hoPuZLd3L2qoq1xQYUCXlI6waKUCLEwMVLuIhF6jK95nR6U4lkezUqhKE0MV50zVPAmeLmDe9Fw_oWfrSFw-xlvYEuqwle4QRywJ2pauBTshVZhLNlSaB2Ydt5LbqJUw9uAsCHIh6gP4sCX8NR6lj2NJBpEver8X4Qy3-eccN00-LhaURJA09Kw4vbSqsiPfa_GEECg3dDzA"/>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-sm font-medium text-on-surface truncate">Nghiên cứu viên</p>
+<p class="font-body-md text-[11px] text-on-surface-variant truncate">Viện Lịch sử Đảng</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">settings</span>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Top Utility Bar -->
+<div class="h-14 glass-panel sticky top-0 z-30 flex items-center justify-between px-6 border-b border-outline-variant/30 hidden md:flex">
+<div class="flex gap-4">
+<span class="font-body-md text-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> Trang chủ / Tổng quan</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface-variant/50 hover:bg-surface-variant text-on-surface text-sm font-body-md transition-colors border border-outline-variant/20 tooltip relative">
+<span class="material-symbols-outlined text-[18px]">bookmark</span> Đã lưu (12)
+                </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-md bg-primary text-on-primary text-sm font-body-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">edit_note</span> Ghi chú mới
+                </button>
+</div>
+</div>
+<div class="flex-1 p-4 md:p-8 overflow-y-auto">
+<!-- Key Metrics Dashboard -->
+<section class="mb-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-card p-4 rounded-xl flex items-start gap-3">
+<div class="p-2 bg-primary/10 rounded-lg text-primary"><span class="material-symbols-outlined">library_books</span></div>
+<div>
+<div class="font-label-caps text-on-surface-variant mb-1">Tài liệu số hóa</div>
+<div class="font-h2 text-2xl text-on-surface">12,450</div>
+<div class="font-body-md text-xs text-green-700 flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-[12px]">trending_up</span> +34 tuần này</div>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex items-start gap-3">
+<div class="p-2 bg-secondary/10 rounded-lg text-secondary"><span class="material-symbols-outlined">history_edu</span></div>
+<div>
+<div class="font-label-caps text-on-surface-variant mb-1">Sự kiện chính</div>
+<div class="font-h2 text-2xl text-on-surface">845</div>
+<div class="font-body-md text-xs text-on-surface-variant mt-1">Đã được xác thực</div>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex items-start gap-3">
+<div class="p-2 bg-outline/10 rounded-lg text-outline"><span class="material-symbols-outlined">groups</span></div>
+<div>
+<div class="font-label-caps text-on-surface-variant mb-1">Nhân vật lịch sử</div>
+<div class="font-h2 text-2xl text-on-surface">1,204</div>
+<div class="font-body-md text-xs text-on-surface-variant mt-1">Hồ sơ chi tiết</div>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex items-start gap-3">
+<div class="p-2 bg-primary-container/20 rounded-lg text-primary"><span class="material-symbols-outlined">menu_book</span></div>
+<div>
+<div class="font-label-caps text-on-surface-variant mb-1">Chương trình học</div>
+<div class="font-h2 text-2xl text-on-surface">4</div>
+<div class="font-body-md text-xs text-primary mt-1 flex items-center gap-1">Tiến độ: 45% <div class="w-12 h-1.5 bg-surface-variant rounded-full overflow-hidden"><div class="w-[45%] h-full bg-primary"></div></div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Refined Hero Section -->
+<section class="relative w-full rounded-2xl overflow-hidden mb-10 shadow-lg border border-outline-variant/30 group">
+<!-- Layered Background with Gradients -->
+<div class="absolute inset-0 bg-surface-container-highest">
+<img alt="Hero Banner" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-60 group-hover:scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA58LsNMZtCeTtp1sYL2XZN7mPK1Oeh_FFChk6Pja5nXRAJne8KiolzZXLL3R-THiSPU_4KUIoX-qA82XJPdHcnFciP-UE4LcVbB0H215FmXSVHtywKLuDzwtcXH59pKkgds9Ktzw4ZuEJvovJ6pWY0v6N7d-1ySCEueOct5ZzwoBfdKIisXY8MOCJpALdIe1d4de3VkYZ6RTFBAzPDskbBxXL9Xpwr4T11I08TjMgKDzRo78-mXPhKusvyNviLtDMoC2xChOWNc1A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1a1c1b] via-[#1a1c1b]/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent mix-blend-overlay"></div>
+</div>
+<div class="relative z-10 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-end justify-between gap-8 h-full min-h-[450px]">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface/10 border border-surface/20 backdrop-blur-md mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-caps text-on-primary text-[10px]">Cập nhật văn kiện Đại hội XIII</span>
+</div>
+<h2 class="font-h1 text-h1 text-on-primary mb-4 leading-tight text-shadow-sm">Tiến trình lịch sử &amp;<br/>Di sản thời đại</h2>
+<p class="font-body-lg text-surface-container-low mb-8 opacity-90 max-w-xl font-light leading-relaxed">
+                            Khám phá chặng đường hào hùng dưới sự lãnh đạo của Đảng Cộng sản Việt Nam thông qua hệ thống tư liệu được số hóa toàn diện, bản đồ không gian và phân tích đa chiều.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-caps px-6 py-3 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined">play_circle</span> Khởi động hành trình
+                            </button>
+<button class="glass-panel text-on-primary border border-surface/30 hover:bg-surface/10 font-label-caps px-6 py-3 rounded-lg transition-all flex items-center gap-2">
+                                Khám phá kho lưu trữ <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Quick Info Box Overlay -->
+<div class="hidden lg:block glass-panel p-5 rounded-xl max-w-xs border border-surface/20 text-on-primary self-end backdrop-blur-md bg-[#1a1c1b]/40">
+<div class="font-label-caps text-outline-variant mb-2 border-b border-surface/20 pb-2">Hôm nay trong lịch sử</div>
+<div class="font-body-md text-sm font-medium mb-1">3/2/1930</div>
+<div class="font-body-md text-xs opacity-80 leading-relaxed">Hội nghị hợp nhất các tổ chức cộng sản thành lập Đảng Cộng sản Việt Nam tại Cửu Long, Hương Cảng (Trung Quốc).</div>
+</div>
+</div>
+</section>
+<!-- Chapters (Sophisticated Cards) -->
+<section class="mb-12">
+<div class="flex items-end justify-between mb-6 border-b border-outline-variant/40 pb-2">
+<div>
+<h2 class="font-h2 text-h2 text-primary">Chương Trình Cốt Lõi</h2>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">Hệ thống hóa tiến trình lịch sử qua 4 giai đoạn trọng tâm.</p>
+</div>
+<button class="text-secondary font-label-caps hover:text-primary transition-colors flex items-center gap-1">Xem tất cả <span class="material-symbols-outlined text-[16px]">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="glass-card hover-lift rounded-xl p-6 relative overflow-hidden group border-t-4 border-t-primary">
+<div class="absolute -right-6 -top-6 text-primary/5 transform rotate-12 group-hover:scale-110 transition-transform duration-500"><span class="material-symbols-outlined text-[120px]">menu_book</span></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"><span class="material-symbols-outlined">flag</span></div>
+<span class="font-label-caps text-[10px] text-outline px-2 py-1 rounded bg-surface border border-outline-variant/30">1930 - 1945</span>
+</div>
+<h3 class="font-h3 text-xl text-on-surface mb-3 leading-snug">Sự ra đời &amp; Đấu tranh giành chính quyền</h3>
+<p class="font-body-md text-sm text-on-surface-variant flex-1 line-clamp-3">Đảng Cộng sản Việt Nam ra đời và lãnh đạo đấu tranh giành chính quyền, đỉnh cao là Cách mạng tháng Tám.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex items-center justify-between text-xs font-body-md text-on-surface-variant">
+<span>12 Bài học</span>
+<span class="flex items-center gap-1 hover:text-primary cursor-pointer transition-colors">Vào học <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card hover-lift rounded-xl p-6 relative overflow-hidden group border-t-4 border-t-secondary">
+<div class="absolute -right-6 -top-6 text-secondary/5 transform rotate-12 group-hover:scale-110 transition-transform duration-500"><span class="material-symbols-outlined text-[120px]">swords</span></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary"><span class="material-symbols-outlined">security</span></div>
+<span class="font-label-caps text-[10px] text-outline px-2 py-1 rounded bg-surface border border-outline-variant/30">1945 - 1975</span>
+</div>
+<h3 class="font-h3 text-xl text-on-surface mb-3 leading-snug">Hai cuộc kháng chiến vĩ đại</h3>
+<p class="font-body-md text-sm text-on-surface-variant flex-1 line-clamp-3">Đảng lãnh đạo hai cuộc kháng chiến chống thực dân Pháp và đế quốc Mỹ, bảo vệ độc lập dân tộc.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex items-center justify-between text-xs font-body-md text-on-surface-variant">
+<span>18 Bài học</span>
+<span class="flex items-center gap-1 hover:text-primary cursor-pointer transition-colors">Vào học <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card hover-lift rounded-xl p-6 relative overflow-hidden group border-t-4 border-t-outline">
+<div class="absolute -right-6 -top-6 text-outline/5 transform rotate-12 group-hover:scale-110 transition-transform duration-500"><span class="material-symbols-outlined text-[120px]">construction</span></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-outline/10 flex items-center justify-center text-outline"><span class="material-symbols-outlined">architecture</span></div>
+<span class="font-label-caps text-[10px] text-outline px-2 py-1 rounded bg-surface border border-outline-variant/30">1975 - Nay</span>
+</div>
+<h3 class="font-h3 text-xl text-on-surface mb-3 leading-snug">Xây dựng &amp; Đổi mới đất nước</h3>
+<p class="font-body-md text-sm text-on-surface-variant flex-1 line-clamp-3">Đảng lãnh đạo cả nước quá độ lên chủ nghĩa xã hội và tiến hành công cuộc đổi mới toàn diện.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex items-center justify-between text-xs font-body-md text-on-surface-variant">
+<span>15 Bài học</span>
+<span class="flex items-center gap-1 hover:text-primary cursor-pointer transition-colors">Vào học <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card hover-lift rounded-xl p-6 relative overflow-hidden group border-t-4 border-t-tertiary-container">
+<div class="absolute -right-6 -top-6 text-tertiary-container/5 transform rotate-12 group-hover:scale-110 transition-transform duration-500"><span class="material-symbols-outlined text-[120px]">star</span></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/10 flex items-center justify-center text-tertiary-container"><span class="material-symbols-outlined">lightbulb</span></div>
+<span class="font-label-caps text-[10px] text-outline px-2 py-1 rounded bg-surface border border-outline-variant/30">Tổng kết</span>
+</div>
+<h3 class="font-h3 text-xl text-on-surface mb-3 leading-snug">Bài học kinh nghiệm lịch sử</h3>
+<p class="font-body-md text-sm text-on-surface-variant flex-1 line-clamp-3">Đúc kết những bài học lý luận và thực tiễn quý báu qua các thời kỳ cách mạng.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex items-center justify-between text-xs font-body-md text-on-surface-variant">
+<span>8 Bài học</span>
+<span class="flex items-center gap-1 hover:text-primary cursor-pointer transition-colors">Vào học <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Topics Bento Grid with Interactive Hover states -->
+<section class="mb-12">
+<div class="flex items-end justify-between mb-6 border-b border-outline-variant/40 pb-2">
+<div>
+<h2 class="font-h2 text-h2 text-primary">Bộ Sưu Tập Chuyên Đề</h2>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">Đi sâu vào các khía cạnh cốt lõi của lịch sử Đảng.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[220px]">
+<!-- Large Feature -->
+<div class="md:col-span-2 md:row-span-2 rounded-2xl relative overflow-hidden group shadow-md border border-outline-variant/30">
+<img alt="Topic 1" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRe2vufOK2fkUpWzeONBcOv2AYd6ACKQeiZ275i1wVv_x90g8OG52YcLN7Xs587lKxjyUya4oyxGt8acdt08oGTx1FhrwvuCCTe5W700mKpt14vlzIrcBE7qn8Yin6XS_YoAsiQiqVoe4l6HC6EALocfc2cmVbRAo-krNLUKhXvQeYgU49t0spe58RON6y23rZ9TnXlGMAni682jns2qIZ7OWfzIcmvnMAU7iYuuSPSTZR1VXV9ik49Tt7hSW5CHuDZBlrccN992s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1a1c1b] via-[#1a1c1b]/60 to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<span class="inline-block px-2 py-1 bg-primary/80 backdrop-blur text-on-primary font-label-caps text-[10px] rounded mb-3 w-max">Cốt lõi tư tưởng</span>
+<h3 class="font-h2 text-2xl text-on-primary mb-2">Tư tưởng Hồ Chí Minh</h3>
+<p class="font-body-md text-sm text-surface-container-low opacity-90 max-w-md">Hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam, nền tảng tư tưởng và kim chỉ nam cho hành động.</p>
+<!-- Hidden rich content revealed on hover -->
+<div class="h-0 overflow-hidden group-hover:h-12 group-hover:mt-4 transition-all duration-300 flex items-center gap-4">
+<div class="flex -space-x-2">
+<img alt="" class="w-8 h-8 rounded-full border-2 border-[#1a1c1b]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-sK_WyiEV-8s_LfNEbQFgZRtQiC1FA39dzT692aZk2GGInQwn9aiFa0m_ASyrW-839ahrec-OZeVH4DBEx80hxn3kfWWq5Kfs45DedEODZ1fPr-MFQHHc20vz-XQBLEieFXeakxf8DoTdfke_cwycek-rJbSbsqMOUBMiel61H1Rv_VV_D80N2HjX2W0UmXS3ZOe4g1jk3MykYNHtVp-IAEWyymF6bEhhOVU3A1F03OPTABFKuDEz8EnFOxVSBun_n2wy6KoPzKg"/>
+<img alt="" class="w-8 h-8 rounded-full border-2 border-[#1a1c1b]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD99gRiUbSMosJijxtavK5F2UMhBbRohemGqpHn7_M8qH9LTS7074SmfvLnHsuJXtXOCX6NamiuAgvfZ1eVpv01gV_Fax5aeE4UrMlZWyzExWVZ8Fs1eRRG9fkoR52C85zwKedLDAor06fQtYb8diFZBky1E5c4HXHFyXeSLrOzi2IKF2lEWQS3F120aodRk2bzhnujc9ye62FIexPEPLwYJrkHAxC6RdeveFIr4zyKKyJ65vpDLaWdiKqnJ3qBzP2tiVmgndfveSo"/>
+<div class="w-8 h-8 rounded-full border-2 border-[#1a1c1b] bg-surface flex items-center justify-center text-xs font-bold">+1k</div>
+</div>
+<span class="text-xs text-on-primary font-body-md">Tài liệu tham khảo</span>
+</div>
+</div>
+</div>
+<!-- Medium Tiles -->
+<div class="md:col-span-2 rounded-2xl glass-card p-6 flex flex-col justify-between group border-l-4 border-l-secondary relative overflow-hidden">
+<div class="absolute right-0 bottom-0 opacity-5 group-hover:opacity-10 transition-opacity"><span class="material-symbols-outlined text-[150px]">gavel</span></div>
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-h3 text-xl text-primary mb-2">Văn kiện Đảng qua các kỳ Đại hội</h3>
+<button class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors"><span class="material-symbols-outlined text-[16px]">arrow_outward</span></button>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant max-w-sm">Hệ thống các nghị quyết, cương lĩnh, báo cáo chính trị mang tính lịch sử, định hướng sự phát triển của đất nước.</p>
+</div>
+<div class="flex gap-2 mt-4">
+<span class="px-2 py-1 bg-surface rounded text-xs font-body-md text-outline border border-outline-variant/30">Cương lĩnh 1930</span>
+<span class="px-2 py-1 bg-surface rounded text-xs font-body-md text-outline border border-outline-variant/30">Đổi mới 1986</span>
+</div>
+</div>
+<div class="rounded-2xl glass-card p-6 flex flex-col justify-between group">
+<div class="w-10 h-10 rounded-full bg-outline/10 text-outline flex items-center justify-center mb-3"><span class="material-symbols-outlined">groups</span></div>
+<h3 class="font-h3 text-lg text-on-surface mb-1">Nhân vật lịch sử</h3>
+<p class="font-body-md text-xs text-on-surface-variant line-clamp-2 mb-4">Tiểu sử và cống hiến của các thế hệ lãnh đạo.</p>
+<a class="text-xs font-label-caps text-primary hover:underline" href="#">Tra cứu danh bạ</a>
+</div>
+<div class="rounded-2xl bg-primary text-on-primary p-6 flex flex-col justify-between shadow-inner relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-10"><span class="material-symbols-outlined text-[100px]">auto_graph</span></div>
+<div class="relative z-10">
+<h3 class="font-h3 text-lg mb-1">Dữ liệu &amp; Thống kê</h3>
+<p class="font-body-md text-xs opacity-80 mb-4">Biểu đồ sự phát triển đảng viên và tổ chức cơ sở.</p>
+</div>
+<button class="relative z-10 self-start px-3 py-1.5 bg-on-primary text-primary rounded text-xs font-label-caps shadow-sm hover:bg-surface-container-low transition-colors">Xem biểu đồ</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- RIGHT SIDEBAR: Timeline & Research Notes -->
+<aside class="hidden xl:flex flex-col w-80 h-screen sticky top-0 border-l border-outline-variant bg-surface-container-lowest z-40 shrink-0">
+<!-- Expanded Timeline with Secondary Events -->
+<div class="flex-1 overflow-y-auto p-6 border-b border-outline-variant/40 relative">
+<h3 class="font-label-caps text-outline mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">history</span> Trục Thời Gian Tương Tác</h3>
+<div class="relative border-l-2 border-outline-variant/40 ml-3 space-y-8 pb-4">
+<!-- Primary Event 1 -->
+<div class="relative pl-6 group">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-primary border-[3px] border-surface shadow-sm group-hover:scale-125 transition-transform"></div>
+<div class="font-h3 text-lg text-primary leading-none mb-1">1930</div>
+<div class="font-body-md text-sm font-medium text-on-surface mb-1">Thành lập Đảng</div>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Hội nghị hợp nhất tại Cửu Long, Hương Cảng.</p>
+<!-- Secondary Events -->
+<div class="mt-3 pl-3 border-l border-dashed border-outline/30 space-y-2">
+<div class="relative pl-3">
+<div class="absolute -left-[3px] top-1.5 w-1.5 h-1.5 rounded-full bg-outline"></div>
+<div class="text-[11px] font-body-md text-on-surface-variant"><span class="font-semibold">Tháng 10:</span> Hội nghị BCH Trung ương lần thứ nhất.</div>
+</div>
+</div>
+</div>
+<!-- Primary Event 2 -->
+<div class="relative pl-6 group">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-secondary border-[3px] border-surface shadow-sm group-hover:scale-125 transition-transform"></div>
+<div class="font-h3 text-lg text-secondary leading-none mb-1">1945</div>
+<div class="font-body-md text-sm font-medium text-on-surface mb-1">Cách mạng Tháng Tám</div>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Thành lập nước Việt Nam Dân chủ Cộng hòa.</p>
+<div class="mt-2 text-[10px] text-primary bg-primary/5 px-2 py-1 rounded inline-block border border-primary/10 cursor-pointer hover:bg-primary/10">Xem bản tuyên ngôn</div>
+</div>
+<!-- Primary Event 3 -->
+<div class="relative pl-6 group">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-outline border-[3px] border-surface shadow-sm group-hover:scale-125 transition-transform"></div>
+<div class="font-h3 text-lg text-outline leading-none mb-1">1954</div>
+<div class="font-body-md text-sm font-medium text-on-surface mb-1">Chiến thắng Điện Biên Phủ</div>
+</div>
+<!-- Primary Event 4 -->
+<div class="relative pl-6 group">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-primary border-[3px] border-surface shadow-sm group-hover:scale-125 transition-transform"></div>
+<div class="font-h3 text-lg text-primary leading-none mb-1">1975</div>
+<div class="font-body-md text-sm font-medium text-on-surface mb-1">Giải phóng Miền Nam</div>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Đại thắng mùa Xuân, thống nhất đất nước.</p>
+</div>
+<!-- Primary Event 5 -->
+<div class="relative pl-6 group">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-tertiary-container border-[3px] border-surface shadow-sm group-hover:scale-125 transition-transform"></div>
+<div class="font-h3 text-lg text-tertiary-container leading-none mb-1">1986</div>
+<div class="font-body-md text-sm font-medium text-on-surface mb-1">Đại hội VI (Đổi Mới)</div>
+<div class="mt-3 pl-3 border-l border-dashed border-outline/30 space-y-2">
+<div class="relative pl-3">
+<div class="absolute -left-[3px] top-1.5 w-1.5 h-1.5 rounded-full bg-outline"></div>
+<div class="text-[11px] font-body-md text-on-surface-variant"><span class="font-semibold">Đường lối:</span> Phát triển kinh tế nhiều thành phần.</div>
+</div>
+</div>
+</div>
+<!-- Gradient fade out at bottom -->
+<div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-surface-container-lowest to-transparent pointer-events-none"></div>
+</div>
+<button class="w-full mt-4 py-2 border border-outline-variant/60 rounded-lg text-xs font-label-caps text-on-surface-variant hover:bg-surface-variant/30 transition-colors">Mở toàn bộ niên đại</button>
+</div>
+<!-- Research Notes Widget -->
+<div class="p-4 bg-surface-container-low h-64 flex flex-col relative">
+<div 0="" 10="" 100%25\"="" 20="" 20\"="" class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\" d='\"M' fill='\"none\"' height='\"100%25\"' id='\"lines\"' l="" opacity-50"="" patternunits='\"userSpaceOnUse\"%3E%3Cpath' pointer-events-none="" stroke='\"%23906f6a\"' stroke-opacity='\"0.2\"/%3E%3C/pattern%3E%3C/defs%3E%3Crect' stroke-width='\"0.5\"' width='\"10\"' xmlns='\"http://www.w3.org/2000/svg\"%3E%3Cdefs%3E%3Cpattern'></div>
+<div class="relative z-10 flex-1 flex flex-col">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-label-caps text-primary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">edit</span> Sổ tay Nghiên cứu</h3>
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-[16px]">open_in_new</span></button>
+</div>
+<textarea class="flex-1 w-full bg-transparent border-none resize-none focus:ring-0 p-0 text-sm font-body-md text-on-surface placeholder-on-surface-variant/50 leading-5" placeholder="Nhập ghi chú nhanh hoặc trích dẫn tại đây..."></textarea>
+<div class="mt-2 flex justify-end gap-2">
+<button class="p-1.5 rounded bg-surface border border-outline-variant/50 text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[14px]">format_bold</span></button>
+<button class="p-1.5 rounded bg-surface border border-outline-variant/50 text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[14px]">link</span></button>
+<button class="px-3 py-1.5 rounded bg-primary text-on-primary text-xs font-label-caps hover:bg-primary-container transition-colors ml-auto">Lưu nháp</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Mobile Bottom Nav (Simplified for high fidelity view) -->
+<nav class="md:hidden glass-panel border-t border-outline-variant fixed bottom-0 w-full z-50 flex justify-around items-center h-16 pb-safe">
+<a class="flex flex-col items-center justify-center text-primary font-bold w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full relative" href="#">
+<div class="absolute -top-3 bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-4 border-surface"><span class="material-symbols-outlined">menu_book</span></div>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px]">timeline</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px]">bookmark</span>
+</a>
+</nav>
+</body></html>

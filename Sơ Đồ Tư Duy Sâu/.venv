@@ -1,0 +1,13 @@
+#!/bin/bash
+PROJECT_ID="tool-dich-thuat"
+LOCATION="global"
+MODEL_ID="gemini-3.1-pro-preview"
+
+# Ví dụ cho Luồng 1 (Bạn sẽ tạo 6 file request_1.json đến request_6.json chứa system prompt ép xuất JSON và nội dung yêu cầu tương ứng ở Phần 2)
+curl -X POST \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "Content-Type: application/json" \
+  "https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${LOCATION}/publishers/google/models/${MODEL_ID}:generateContent" \
+  -d @request_1.json > response_1.json &
+
+# Thêm ký tự & ở cuối lệnh để hệ điều hành ném tiến trình này chạy ngầm (background), từ đó gọi tiếp request_2, request_3... cùng lúc.

@@ -1,0 +1,80 @@
+ Sub AltTextToCaptionPro()
+     Dim iShape As InlineShape
+     Dim shp As Shape
+     Dim shapeAltText As String
+     Dim cleanAltText As String
+     Dim labelHinh As String
+
+     ' Chu "Hinh" tieng Viet
+     labelHinh = "H" & ChrW(236) & "nh"
+
+     On Error Resume Next
+     CaptionLabels.Add Name:=labelHinh
+     On Error GoTo 0
+
+     ' ========================================================
+     ' PHAN 1: QUET CAC ANH CUNG DONG (INLINE SHAPES)
+     ' ========================================================
+     For Each iShape In ActiveDocument.InlineShapes
+         If iShape.Type = wdInlineShapePicture Then
+             shapeAltText = iShape.AlternativeText
+
+             cleanAltText = Replace(shapeAltText, Chr(13), " ")
+             cleanAltText = Replace(cleanAltText, Chr(10), " ")
+             cleanAltText = Trim(cleanAltText)
+
+             If cleanAltText <> "" Then
+                 iShape.Select
+
+                 On Error Resume Next
+                 Selection.InsertCaption Label:=labelHinh, TitleAutoText:="", _
+                     Title:="", Position:=wdCaptionPositionBelow
+
+                 Selection.TypeText Text:=": " & cleanAltText
+
+                 ' Dinh dang vao chuan (Style Caption) de 100% vao Muc luc
+                 Selection.Paragraphs(1).Style = wdStyleCaption
+                 ' Ep Canh giua, Mau den, Co chu 13, in thuong
+                 Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+                 Selection.Paragraphs(1).Range.Font.ColorIndex = wdAuto ' wdAuto hoac wdBlack
+                 Selection.Paragraphs(1).Range.Font.Size = 13
+                 Selection.Paragraphs(1).Range.Font.Italic = False ' De False neu khong thich in nghieng
+                 On Error GoTo 0
+             End If
+         End If
+     Next iShape
+
+     ' ========================================================
+     ' PHAN 2: QUET CAC ANH TROI NOI (SHAPES) - TRANG BI SOT
+     ' ========================================================
+     For Each shp In ActiveDocument.Shapes
+         ' Kiem tra no co phai la hinh anh khong
+         If shp.Type = msoPicture Or shp.Type = msoLinkedPicture Then
+             shapeAltText = shp.AlternativeText
+
+             cleanAltText = Replace(shapeAltText, Chr(13), " ")
+             cleanAltText = Replace(cleanAltText, Chr(10), " ")
+             cleanAltText = Trim(cleanAltText)
+
+             If cleanAltText <> "" Then
+                 shp.Select
+
+                 On Error Resume Next
+                 Selection.InsertCaption Label:=labelHinh, TitleAutoText:="", _
+                     Title:="", Position:=wdCaptionPositionBelow
+
+                 Selection.TypeText Text:=": " & cleanAltText
+
+                 ' Dinh dang vao chuan
+                 Selection.Paragraphs(1).Style = wdStyleCaption
+                 Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+                 Selection.Paragraphs(1).Range.Font.ColorIndex = wdAuto
+                 Selection.Paragraphs(1).Range.Font.Size = 13
+                 Selection.Paragraphs(1).Range.Font.Italic = False
+                 On Error GoTo 0
+             End If
+         End If
+     Next shp
+
+     MsgBox "Hoan tat! Da quet them cac anh bi sot, gan style Chuan, Mau den, Co chu 13.", vbInformation, "Thong Bao"
+ End Sub

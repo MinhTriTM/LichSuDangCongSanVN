@@ -1,0 +1,198 @@
+[
+  {
+    "folder_id": "trang_ch_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Lịch sử Đảng Cộng sản Việt Nam - Trang chủ",
+    "description": "Khám phá chặng đường hào hùng của dân tộc dưới sự lãnh đạo của Đảng Cộng sản Việt Nam, từ những ngày đầu thành lập đến công cuộc đổi mới và phát triển đất nước.",
+    "events": [
+      {"date": "1930", "detail": "Thành lập Đảng Cộng sản Việt Nam."},
+      {"date": "1945", "detail": "Cách mạng tháng Tám thành công, nước VNDCCH ra đời."},
+      {"date": "1975", "detail": "Giải phóng miền Nam, thống nhất đất nước."},
+      {"date": "1986", "detail": "Đại hội VI, bắt đầu công cuộc Đổi mới."}
+    ]
+  },
+  {
+    "folder_id": "d_ng_th_i_gian_giai_o_n_1930_1945_mobile",
+    "title": "Thời kỳ 1930 - 1945",
+    "description": "Đảng Cộng sản Việt Nam ra đời và lãnh đạo đấu tranh giành chính quyền.",
+    "events": [
+      {"date": "3/2/1930", "detail": "Hội nghị thành lập Đảng Cộng sản Việt Nam tại Cửu Long, Hương Cảng."},
+      {"date": "1930 - 1931", "detail": "Phong trào cách mạng 1930-1931 và Xô Viết Nghệ Tĩnh."},
+      {"date": "5/1941", "detail": "Hội nghị Trung ương Đảng lần thứ 8 tại Pác Bó, Cao Bằng."},
+      {"date": "8/1945", "detail": "Cách mạng Tháng Tám thành công, giành chính quyền trên cả nước."}
+    ]
+  },
+  {
+    "folder_id": "chi_ti_t_s_ki_n_d_ng_th_i_gian_mobile",
+    "title": "Chi tiết Sự kiện - Dòng Thời Gian",
+    "description": "Thông tin chi tiết về các mốc son lịch sử chói lọi của Đảng Cộng sản Việt Nam.",
+    "events": [
+      {"date": "3/2/1930", "detail": "Hội nghị hợp nhất các tổ chức cộng sản thành Đảng Cộng sản Việt Nam."},
+      {"date": "1925 - 1929", "detail": "Sự ra đời của các tổ chức cộng sản ở Việt Nam."},
+      {"date": "1930 - 1931", "detail": "Phong trào cách mạng 1930 - 1931 và Xô viết Nghệ Tĩnh."}
+    ]
+  },
+  {
+    "folder_id": "trang_ch_cao_c_p_l_ch_s_ng_c_ng_s_n_vi_t_nam_v3",
+    "title": "Cổng Nghiên cứu Cao cấp - Lịch sử Đảng",
+    "description": "Nền tảng nghiên cứu chuyên sâu về các văn kiện, nghị quyết và tiến trình lịch sử Đảng.",
+    "events": [
+      {"date": "1930-1945", "detail": "Giai đoạn Đảng ra đời và giành chính quyền."},
+      {"date": "1945-1975", "detail": "Giai đoạn kháng chiến chống Pháp và Mỹ."},
+      {"date": "1975-Nay", "detail": "Giai đoạn cả nước quá độ lên CNXH và Đổi mới."}
+    ]
+  },
+  {
+    "folder_id": "b_n_s_l_ch_s_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Bản đồ số Lịch sử Đảng",
+    "description": "Hệ thống dữ liệu không gian - thời gian về các địa danh và sự kiện lịch sử cách mạng.",
+    "events": [
+      {"date": "1941", "detail": "Lãnh tụ Nguyễn Ái Quốc về nước trực tiếp lãnh đạo cách mạng tại Pác Bó."},
+      {"date": "1954", "detail": "Chiến thắng Điện Biên Phủ lừng lẫy năm châu, chấn động địa cầu."},
+      {"date": "30/4/1975", "detail": "Giải phóng hoàn toàn miền Nam, thống nhất đất nước."}
+    ]
+  },
+  {
+    "folder_id": "di_n_n_trao_i_th_o_lu_n_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Diễn đàn Trao đổi Lịch sử Đảng",
+    "description": "Nơi hội tụ, thảo luận và phân tích chuyên sâu về các văn kiện và tiến trình cách mạng.",
+    "events": [
+      {"date": "2/1930", "detail": "Thông qua Cương lĩnh chính trị đầu tiên của Đảng."},
+      {"date": "10/1930", "detail": "Thông qua Luận cương chính trị của Đảng Cộng sản Đông Dương."}
+    ]
+  },
+  {
+    "folder_id": "chi_ti_t_ch_ng_h_c_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Chi tiết Chương học Lịch sử Đảng",
+    "description": "Nội dung chi tiết các chương trình đào tạo về lịch sử Đảng Cộng sản Việt Nam.",
+    "events": [
+      {"date": "1920 - 1930", "detail": "Bối cảnh lịch sử và sự ra đời của Đảng Cộng sản Việt Nam."},
+      {"date": "3/2/1930", "detail": "Hội nghị thành lập Đảng và Cương lĩnh chính trị đầu tiên."}
+    ]
+  },
+  {
+    "folder_id": "t_i_n_thu_t_ng_l_ch_s_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Từ điển Thuật ngữ Lịch sử Đảng",
+    "description": "Hệ thống giải nghĩa các thuật ngữ, khái niệm dùng trong nghiên cứu lịch sử Đảng.",
+    "events": [
+      {"date": "1930", "detail": "Xác lập tên gọi Đảng Cộng sản Việt Nam."},
+      {"date": "1951", "detail": "Đổi tên thành Đảng Lao động Việt Nam tại Đại hội II."}
+    ]
+  },
+  {
+    "folder_id": "chi_ti_t_t_li_u_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Chi tiết Tư liệu Lịch sử Đảng",
+    "description": "Kho lưu trữ hình ảnh, văn bản gốc và các bằng chứng lịch sử quan trọng.",
+    "events": [
+      {"date": "2/9/1945", "detail": "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình."},
+      {"date": "19/5/1890", "detail": "Ngày sinh Chủ tịch Hồ Chí Minh - lãnh tụ vĩ đại của Đảng và dân tộc."}
+    ]
+  },
+  {
+    "folder_id": "b_ng_x_p_h_ng_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Bảng Vàng Danh Dự",
+    "description": "Ghi danh và tôn vinh những nỗ lực nghiên cứu, học tập lịch sử Đảng xuất sắc.",
+    "events": [
+      {"date": "1930", "detail": "Mốc khởi đầu của tiến trình lịch sử Đảng hiện đại."},
+      {"date": "1945", "detail": "Thành tựu vĩ đại của Cách mạng Tháng Tám."}
+    ]
+  },
+  {
+    "folder_id": "h_s_c_nh_n_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Hồ sơ Cá nhân Nghiên cứu viên",
+    "description": "Quản lý thông tin nghiên cứu và theo dõi tiến trình tìm hiểu lịch sử Đảng.",
+    "events": [
+      {"date": "1930", "detail": "Điểm mốc quan trọng trong mọi lộ trình học tập lịch sử Đảng."}
+    ]
+  },
+  {
+    "folder_id": "h_s_c_nh_n_mobile_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Hồ sơ Cá nhân (Bản Mobile)",
+    "description": "Giao diện quản lý thông tin học tập linh hoạt trên thiết bị di động.",
+    "events": [
+      {"date": "1930", "detail": "Hoàn thành chuyên đề về sự ra đời của Đảng."}
+    ]
+  },
+  {
+    "folder_id": "ki_m_tra_ki_n_th_c_mobile_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Kiểm tra Kiến thức (Bản Mobile)",
+    "description": "Hệ thống câu hỏi trắc nghiệm đánh giá hiểu biết về lịch sử Đảng.",
+    "events": [
+      {"date": "3/2/1930", "detail": "Thời gian diễn ra Hội nghị thành lập Đảng tại Hương Cảng."}
+    ]
+  },
+  {
+    "folder_id": "d_ng_th_i_gian_mobile_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Dòng Thời Gian (Bản Mobile)",
+    "description": "Tiến trình lịch sử Đảng được tối ưu hóa cho trải nghiệm di động.",
+    "events": [
+      {"date": "2/1930", "detail": "Hội nghị thành lập Đảng Cộng sản Việt Nam."},
+      {"date": "9/1930", "detail": "Phong trào Xô viết Nghệ Tĩnh bùng nổ."}
+    ]
+  },
+  {
+    "folder_id": "th_vi_n_t_li_u_mobile_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Thư viện Tư liệu (Bản Mobile)",
+    "description": "Truy cập kho văn kiện và hình ảnh lịch sử mọi lúc, mọi nơi.",
+    "events": [
+      {"date": "1945", "detail": "Tư liệu về Cách mạng Tháng Tám và ngày Độc lập."},
+      {"date": "1954", "detail": "Tư liệu về chiến thắng Điện Biên Phủ."}
+    ]
+  },
+  {
+    "folder_id": "t_ng_k_t_k_t_qu_mobile_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Tổng kết Kết quả (Bản Mobile)",
+    "description": "Báo cáo chi tiết kết quả học tập và rèn luyện kiến thức lịch sử Đảng.",
+    "events": [
+      {"date": "1930-1945", "detail": "Đạt chuẩn kiến thức giai đoạn giành độc lập."}
+    ]
+  },
+  {
+    "folder_id": "t_ng_k_t_k_t_qu_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Kết quả bài kiểm tra Lịch sử Đảng",
+    "description": "Phân tích và đánh giá sự tiến bộ trong quá trình nghiên cứu lịch sử.",
+    "events": [
+      {"date": "1930", "detail": "Mốc kiến thức nền tảng trong mọi bài kiểm tra."}
+    ]
+  },
+  {
+    "folder_id": "ki_m_tra_ki_n_th_c_c_gi_i_th_ch_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Kiểm tra & Giải thích kiến thức",
+    "description": "Học tập thông qua các bài kiểm tra có lời giải chi tiết và chuyên sâu.",
+    "events": [
+      {"date": "1930", "detail": "Giải thích bối cảnh và ý nghĩa sự ra đời của Đảng."}
+    ]
+  },
+  {
+    "folder_id": "ki_m_tra_ki_n_th_c_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Kiểm tra Kiến thức Lịch sử Đảng",
+    "description": "Hệ thống đánh giá toàn diện về các giai đoạn phát triển của Đảng.",
+    "events": [
+      {"date": "1975", "detail": "Mốc thời gian quan trọng trong các câu hỏi về thống nhất đất nước."}
+    ]
+  },
+  {
+    "folder_id": "kho_t_li_u_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Kho Tư liệu Lịch sử Đảng",
+    "description": "Nơi lưu giữ những di sản quý báu về tư tưởng và hành động của Đảng.",
+    "events": [
+      {"date": "1930", "detail": "Văn kiện nền tảng: Chánh cương vắn tắt, Sách lược vắn tắt."}
+    ]
+  },
+  {
+    "folder_id": "d_ng_th_i_gian_t_ng_t_c_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Dòng thời gian Tương tác",
+    "description": "Trải nghiệm lịch sử thông qua giao diện dòng thời gian sinh động và hiện đại.",
+    "events": [
+      {"date": "1930-1945", "detail": "Tiến trình giành chính quyền."},
+      {"date": "1945-1975", "detail": "Tiến trình kháng chiến giải phóng dân tộc."}
+    ]
+  },
+  {
+    "folder_id": "danh_m_c_ch_tr_ng_t_m_l_ch_s_ng_c_ng_s_n_vi_t_nam",
+    "title": "Danh mục Chủ đề Trọng tâm",
+    "description": "Tổng hợp các vấn đề cốt lõi và bài học kinh nghiệm của lịch sử Đảng.",
+    "events": [
+      {"date": "1930", "detail": "Chủ đề: Sự lãnh đạo đúng đắn của Đảng là nhân tố quyết định thắng lợi."}
+    ]
+  }
+]

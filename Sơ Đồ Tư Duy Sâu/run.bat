@@ -31,7 +31,7 @@ python --version >nul 2>&1
 if %errorlevel% equ 0 (
     echo =^> Đã phát hiện Python. Đang tiến hành tạo Cơ sở dữ liệu JSON...
     cd LSD
-    python build_db.py
+    python run_vertex_workers.py
     cd ..
     echo =^> Đã tạo xong CSDL. Đang chạy HTTP Server...
     start "Web Server (Python)" cmd /c "title Web Server (Port 3000) & python -m http.server 3000"

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hồ sơ Cá nhân - Lịch sử Đảng Cộng sản Việt Nam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#515050",
+                        "on-secondary-container": "#6e5c00",
+                        "surface-container-highest": "#e2e3e0",
+                        "on-surface": "#1a1c1b",
+                        "surface-variant": "#e2e3e0",
+                        "tertiary-fixed": "#e5e2e1",
+                        "tertiary": "#393939",
+                        "secondary-fixed": "#ffe16d",
+                        "primary-container": "#a50000",
+                        "on-background": "#1a1c1b",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#221b00",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#c4c2c2",
+                        "surface-dim": "#dadad7",
+                        "surface-container": "#eeeeeb",
+                        "surface-bright": "#f9f9f6",
+                        "primary": "#790000",
+                        "on-surface-variant": "#5c403b",
+                        "surface-container-low": "#f4f4f1",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-primary-container": "#ffaea1",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#e5beb7",
+                        "secondary-container": "#fcd400",
+                        "error-container": "#ffdad6",
+                        "outline": "#906f6a",
+                        "inverse-on-surface": "#f1f1ee",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2f312f",
+                        "surface-container-high": "#e8e8e5",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e9c400",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "inverse-primary": "#ffb4a8",
+                        "primary-fixed": "#ffdad4",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#930000",
+                        "on-primary-fixed": "#410000",
+                        "surface-tint": "#bb190e",
+                        "on-secondary-fixed-variant": "#544600",
+                        "secondary": "#705d00",
+                        "surface": "#f9f9f6",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f9f9f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "stack-sm": "12px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Newsreader"],
+                        "h1": ["Newsreader"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-caps": ["Be Vietnam Pro"],
+                        "h3": ["Newsreader"],
+                        "body-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "h2": ["36px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "h3": ["28px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f6; /* background */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="%23e5beb7" stroke-width="0.5" fill="none" opacity="0.1"/></svg>');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-container text-primary dark:text-primary-fixed docked full-width top-0 sticky z-50 border-b-2 border-primary dark:border-outline-variant flat no shadows">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<h1 class="font-h2 text-h2 font-semibold text-primary dark:text-primary-fixed-dim uppercase tracking-tight">Lịch sử Đảng Cộng sản Việt Nam</h1>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim font-medium pb-2 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Chương</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim font-medium pb-2 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Chủ đề</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim font-medium pb-2 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Kho tư liệu</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim font-medium pb-2 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Niên đại</a>
+</nav>
+<div class="flex gap-4">
+<button class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200"><span class="material-symbols-outlined">history_edu</span></button>
+<button class="text-primary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed-dim font-bold pb-2 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 opacity-80 transition-all duration-300"><span class="material-symbols-outlined fill">account_circle</span></button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md">
+<!-- Profile Header -->
+<section class="flex flex-col items-center mb-stack-lg pt-stack-sm">
+<div class="relative mb-4">
+<img alt="Avatar" class="w-32 h-32 rounded-full border-4 border-primary shadow-lg object-cover" data-alt="A dignified portrait of a Vietnamese man in his 30s, viewed from the chest up. The lighting is soft and natural, evoking a sense of calm reliability. The background is a muted, out-of-focus archival library setting with subtle warm tones. The overall aesthetic aligns with a modern, official, and respectful institutional profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCQ_w9Hd0ffOfRGNU3SnY4ZRUbz0LfB1H5c8R9_5xjXB-Zw10pX0ACMLuLLe_DhBWFSZMxhT8a1fCsub4d5gY0477JerM4jVvjTqEmtmYTPvWBBapXU8w_KJDeU1WdCkdXBOAYiCyKKlqCFlyYBD8uArZsx9qa66_JPcSAMWmjTLJ6CbSasHyKCm-hy7p8057hn8XinP0b2WQbAOAzkmeiVHxyGCVtK7CxEX3gMzHcz-zSCNKQiga8flYxKSuOT9yDCJN5I5TCHcU"/>
+<div class="absolute bottom-0 right-0 bg-secondary-container text-on-secondary-container p-2 rounded-full border-2 border-surface">
+<span class="material-symbols-outlined fill text-xl">star</span>
+</div>
+</div>
+<h2 class="font-h1 text-h1 text-primary text-center mb-2">Nguyễn Văn A</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-4 py-2 rounded-full uppercase tracking-wider border border-outline-variant">Người tìm tin cậy</p>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-stack-lg">
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">quiz</span>
+<span class="font-h2 text-h2 text-primary mb-1">142</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Câu hỏi đã trả lời</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">menu_book</span>
+<span class="font-h2 text-h2 text-primary mb-1">12</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Chương hoàn thành</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">workspace_premium</span>
+<span class="font-h2 text-h2 text-primary mb-1">5</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Huy hiệu đạt được</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">local_fire_department</span>
+<span class="font-h2 text-h2 text-primary mb-1">14</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Ngày học liên tiếp</span>
+</div>
+</section>
+<!-- Recent Activities -->
+<section class="mb-stack-lg">
+<h3 class="font-h3 text-h3 text-on-surface border-b border-outline-variant pb-2 mb-4">Hoạt động gần đây</h3>
+<div class="space-y-4">
+<div class="bg-surface-container p-4 rounded-lg border-l-4 border-primary flex justify-between items-center">
+<div>
+<p class="font-label-caps text-label-caps text-primary mb-1">Bài Kiểm Tra</p>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Giai đoạn 1930 - 1945</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Hoàn thành với điểm số 95/100</p>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Hôm qua</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg border-l-4 border-secondary flex justify-between items-center">
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">Văn Kiện</p>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Cương lĩnh chính trị đầu tiên</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Đã xem toàn bộ nội dung</p>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">3 ngày trước</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg border-l-4 border-tertiary flex justify-between items-center">
+<div>
+<p class="font-label-caps text-label-caps text-tertiary mb-1">Chương Học</p>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Đại hội Đại biểu Toàn quốc lần thứ VI</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Bắt đầu học</p>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">1 tuần trước</span>
+</div>
+</div>
+</section>
+<!-- Achievements -->
+<section class="mb-stack-lg">
+<h3 class="font-h3 text-h3 text-on-surface border-b border-outline-variant pb-2 mb-4">Thành tích &amp; Huy hiệu</h3>
+<div class="grid grid-cols-3 md:grid-cols-5 gap-4">
+<div class="flex flex-col items-center text-center opacity-100">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-2 border border-outline">
+<span class="material-symbols-outlined fill text-on-primary-container text-3xl">star</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">Khởi đầu xuất sắc</span>
+</div>
+<div class="flex flex-col items-center text-center opacity-100">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-2 border border-outline">
+<span class="material-symbols-outlined fill text-on-secondary-container text-3xl">flag</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">Cờ Tiên Phong</span>
+</div>
+<div class="flex flex-col items-center text-center opacity-100">
+<div class="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center mb-2 border border-outline">
+<span class="material-symbols-outlined fill text-on-tertiary-container text-3xl">menu_book</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">Học giả cần mẫn</span>
+</div>
+<div class="flex flex-col items-center text-center opacity-50 grayscale">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-2 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">military_tech</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Chiến sĩ thi đua</span>
+</div>
+<div class="flex flex-col items-center text-center opacity-50 grayscale">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-2 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">emoji_events</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Chuyên gia</span>
+</div>
+</div>
+</section>
+<!-- Settings / Account Actions -->
+<section class="mb-stack-lg">
+<h3 class="font-h3 text-h3 text-on-surface border-b border-outline-variant pb-2 mb-4">Cài đặt Tài khoản</h3>
+<div class="flex flex-col gap-3">
+<button class="flex items-center justify-between w-full p-4 bg-surface-container-low border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">edit</span>
+<span class="font-body-lg text-body-lg text-on-surface">Chỉnh sửa thông tin</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+<button class="flex items-center justify-between w-full p-4 bg-surface-container-low border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="font-body-lg text-body-lg text-on-surface">Thông báo</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+<button class="flex items-center justify-between w-full p-4 bg-error-container border border-error-container rounded-lg hover:bg-[#ffc2bc] transition-colors mt-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-error-container">logout</span>
+<span class="font-body-lg text-body-lg text-on-error-container font-medium">Đăng xuất</span>
+</div>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-highest dark:bg-surface-container-lowest text-primary dark:text-primary-fixed fixed bottom-0 w-full z-50 md:hidden border-t-2 border-primary dark:border-outline shadow-lg flex justify-around items-center h-16 w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-tertiary-fixed-dim active:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps mt-1">Trang chủ</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-tertiary-fixed-dim active:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">timeline</span>
+<span class="font-label-caps text-label-caps mt-1">Niên đại</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-tertiary-fixed-dim active:bg-surface-variant" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-caps text-label-caps mt-1">Tư liệu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed font-bold active:bg-surface-variant Active: scale-90 duration-200" href="#">
+<span class="material-symbols-outlined fill">person</span>
+<span class="font-label-caps text-label-caps mt-1">Cá nhân</span>
+</a>
+</nav>
+</body></html>
